@@ -19,15 +19,14 @@
   }
     });
     var data1 = {};
-    var idboard="5b61a1ff8d7233289bbb1ef0";
-    xhr.open("POST", "https://api.trello.com/"+idboard+"/cards");    
+    xhr.open("POST", "https://api.trello.com/1/cards");    
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     data1.key = key;
     data1.token  = token;
     data1.name  = document.title;
     /*data1.desc  = document.location.href;*/
     data1.desc  = "TEST CUSTOM DEC";
-    data1.idList  = idList;
+    data1.idList  = "5b4c5e0cd64b060e1ac1c838";
     var json = JSON.stringify(data1);
     xhr.send(json);
 
