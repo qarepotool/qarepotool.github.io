@@ -20,7 +20,7 @@
     });
     //CREACION CARD ID
     var data1 = {};
-    xhr.open("POST", "https://api.trello.com/1/cards",false);    
+    xhr.open("POST", "https://api.trello.com/1/cards");    
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     data1.key = key;
     data1.token  = token;
@@ -31,6 +31,9 @@
     var json2 = JSON.stringify(data1);
     xhr.send(json2);
     console.log(xhr.responseText);
+    console.log(xhr.readyState);
+    console.log(xhr.status);
+    alert(xhr.onreadystatechange);
     xhr.onreadystatechange = function(e) {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
@@ -39,6 +42,8 @@
       }
     }
   }
+  var jsonvalue = JSON.parse(xhr.responseText);
+  var cardcreated = jsonvalue['id'];
    //  var jsonvalue = JSON.parse(xhr.responseText);
    //  var cardcreated = jsonvalue['id'];
     alert(cardcreated);
