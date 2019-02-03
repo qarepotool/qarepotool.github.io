@@ -20,7 +20,7 @@
     });
     //CREACION CARD ID
     var data1 = {};
-    xhr.open("POST", "https://api.trello.com/1/cards");    
+    xhr.open("POST", "https://api.trello.com/1/cards",false);    
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     data1.key = key;
     data1.token  = token;
