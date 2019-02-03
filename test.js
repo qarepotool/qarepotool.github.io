@@ -35,6 +35,7 @@
       opts.type = "GET";
       opts.data._method = "POST";
     }
+
     return jQuery.ajax(opts);
   };
 
