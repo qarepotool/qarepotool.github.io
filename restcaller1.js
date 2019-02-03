@@ -31,6 +31,6 @@
     xhr.send(json);
 
     var jsonvalue = JSON.parse(xhr.responseText);
-    var cardcreated = jsonvalue['id']
+    var cardcreated = jsonvalue['id'];
   };
 }).call(this);
