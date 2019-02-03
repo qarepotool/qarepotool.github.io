@@ -27,7 +27,7 @@
     data1.name  = document.title;
     /*data1.desc  = document.location.href;*/
     data1.desc  = "TEST CUSTOM DEC";
-    data1.idList  = "5b4c5e0cd64b060e1ac1c838";
+    data1.idList  = "5b61b58259e21d8a1c18a247";
     var json2 = JSON.stringify(data1);
     xhr.send(json2)
     console.log(xhr.responseText);
