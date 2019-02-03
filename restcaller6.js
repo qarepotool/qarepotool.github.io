@@ -31,7 +31,8 @@
     var json2 = JSON.stringify(data1);
     xhr.send(json2);
     console.log(xhr.responseText);
-    var jsonvalue = JSON.parse(xhr.responseText);
+    var tessttt=JSON.stringify(data1, null, 2);
+   //  var jsonvalue = JSON.parse(xhr.responseText);
     var cardcreated = jsonvalue['id'];
     alert(cardcreated);
     // CREACION DE ARRAY DE CUSTOM FIELDS
