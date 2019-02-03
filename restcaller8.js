@@ -31,7 +31,13 @@
     var json2 = JSON.stringify(data1);
     xhr.send(json2);
     console.log(xhr.responseText);
-    var cardcreated=JSON.stringify(data1, null, 2);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+          var jsonvalue = JSON.parse(xhr.responseText);
+          myFunction(jsonvalue);
+          var cardcreated = jsonvalue['id'];
+          }
+      };
    //  var jsonvalue = JSON.parse(xhr.responseText);
    //  var cardcreated = jsonvalue['id'];
     alert(cardcreated);
@@ -72,7 +78,7 @@
     // CREACION DE UPDATE DE CUSTOM FIELDS
     var xhr = new XMLHttpRequest();
     var data2 = {};
-    for (var j=0;j<16;j++) {
+    for (var j=0;j<1;j++) {
       xhr.open("PUT", "https://api.trello.com/1/card/"+cardcreated+"/customField/"+arr[0][j]+"/item");    
       xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       data2.key = key;
