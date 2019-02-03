@@ -30,7 +30,7 @@
     var json = JSON.stringify(data1);
     xhr.send(json);
     var json = JSON.parse(xhr.responseText);
-    var yourData = json["idList"]
+    var cardcreated = json["id"]
   };
 
 }).call(this);
