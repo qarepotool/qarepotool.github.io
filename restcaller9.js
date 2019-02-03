@@ -31,13 +31,14 @@
     var json2 = JSON.stringify(data1);
     xhr.send(json2);
     console.log(xhr.responseText);
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState == 4 && xhr.status == 200) {
+    xhr.onreadystatechange = function(e) {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
           var jsonvalue = JSON.parse(xhr.responseText);
-          myFunction(jsonvalue);
           var cardcreated = jsonvalue['id'];
-          }
-      };
+      }
+    }
+  }
    //  var jsonvalue = JSON.parse(xhr.responseText);
    //  var cardcreated = jsonvalue['id'];
     alert(cardcreated);
