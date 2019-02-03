@@ -72,16 +72,15 @@
     arr[1][14]="Testvalue15";
     arr[1][15]="Testvalue16";
     // CREACION DE UPDATE DE CUSTOM FIELDS
-    var xhr = new XMLHttpRequest();
+    var xhrd = new XMLHttpRequest();
     var data2 = {};
     for (var j=0;j<1;j++) {
-      xhr.open("PUT", "https://api.trello.com/1/card/"+cardcreated+"/customField/"+arr[0][j]+"/item");    
-      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8","Access-Control-Allow-Origin,*" );
+      xhrd.open("PUT", "https://api.trello.com/1/card/"+cardcreated+"/customField/"+arr[0][j]+"/item");    
+      xhrd.setRequestHeader("Content-Type", "application/json;charset=UTF-8","Access-Control-Allow-Origin,*" );
       data2.key = key;
       data2.token  = token;
       var json3 = '{ \'value\': { \'text\': ' + arr[1][j] + ' }}';
-      alert(json3)
-      xhr.send(json3);
+      xhrd.send(json3);
     }
   };
 }).call(this);
