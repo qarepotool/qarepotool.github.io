@@ -29,8 +29,9 @@
     data1.idList  = idList;
     var json = JSON.stringify(data1);
     xhr.send(json);
-    var json = JSON.parse(xhr.responseText);
-    var cardcreated = json["id"]
+
+    var jsonvalue = JSON.parse(xhr.responseText);
+    var cardcreated = jsonvalue['id']
   };
 
 }).call(this);
