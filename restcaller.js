@@ -20,7 +20,14 @@
     });
     xhr.open("POST", "https://api.trello.com/1/cards");    
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xhr.send(JSON.stringify({"key": key,"token": token, "name": document.title,"desc": document.location.href,"idList": idList }));
+    var data1 = {};
+    data1.key = "John";
+    data1.token  = "Snow";
+    data1.name  = document.title;
+    data1.desc  = document.location.href;
+    data1.idList  = idList;
+    var json = JSON.stringify(data1);
+    xhr.send(json);
     var json = JSON.parse(xhr.responseText);
     var yourData = json["idList"]
   };
