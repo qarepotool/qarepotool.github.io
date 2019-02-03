@@ -18,7 +18,7 @@
     console.log(this.responseText);
   }
     });
-    xhr.open("POST", "https://api.trello.com/1/cards");    
+    xhr.open("POST", "https://api.trello.com/5b61a1ff8d7233289bbb1ef0/cards");    
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     var data1 = {};
     data1.key = "John";
