@@ -29,7 +29,6 @@
     data1.idList  = "5b4c5e0cd64b060e1ac1c838";
     var json = JSON.stringify(data1);
     xhr.send(json);
-
     var jsonvalue = JSON.parse(xhr.responseText);
     var cardcreated = jsonvalue['id'];
   };
