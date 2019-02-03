@@ -76,7 +76,7 @@
     for (var j=0;j<1;j++) {
       xhrd.open("PUT", "https://api.trello.com/1/card/"+cardcreated+"/customField/"+arr[0][j]+"/item?token="+token+"&key="+key);    
       xhrd.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-      var json3 = '{ \'value\': { \'text\': ' + arr[1][j] + ' }}';
+      var json3 = "{ \"value\": { \"text\": \"" + arr[1][j] + "\" }}";
       xhrd.send(json3);
     }
   };
