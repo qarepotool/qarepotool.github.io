@@ -37,9 +37,6 @@
           var cardcreated = jsonvalue['id'];
   var jsonvalue = JSON.parse(xhr.responseText);
   var cardcreated = jsonvalue['id'];
-   //  var jsonvalue = JSON.parse(xhr.responseText);
-   //  var cardcreated = jsonvalue['id'];
-    alert(cardcreated);
     // CREACION DE ARRAY DE CUSTOM FIELDS
     var arr = Create2DArray(16);
     arr[0][0]="5c531ee01f9d420689bcd3e3"; 
@@ -79,11 +76,12 @@
     var data2 = {};
     for (var j=0;j<1;j++) {
       xhr.open("PUT", "https://api.trello.com/1/card/"+cardcreated+"/customField/"+arr[0][j]+"/item");    
-      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8","Access-Control-Allow-Origin", "*" );
       data2.key = key;
       data2.token  = token;
-      var json = '{ \'value\': { \'text\': ' + arr[0][j] + ' }}';
-      xhr.send(json);
+      var json3 = '{ \'value\': { \'text\': ' + arr[0][j] + ' }}';
+      alert(json3)
+      xhr.send(json3);
     }
   };
 }).call(this);
