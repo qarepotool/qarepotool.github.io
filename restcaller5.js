@@ -30,6 +30,7 @@
     data1.idList  = "5b4c5e0cd64b060e1ac1c838";
     var json2 = JSON.stringify(data1);
     xhr.send(json2);
+    console.log(xhr.responseText);
     var jsonvalue = JSON.parse(xhr.responseText);
     var cardcreated = jsonvalue['id'];
     alert(cardcreated);
