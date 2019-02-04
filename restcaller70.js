@@ -180,7 +180,7 @@ function Addlabeltocard(type,idcard,key,token){
   xhrf.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   data2.key = key;
   data2.token = token;
-  data2.value = "5b61a1ff8d7233289bbb1f1b";
+  data2.value = idlabel;
   var json2 = JSON.stringify(data2);
   xhrf.send(json2)
 }
