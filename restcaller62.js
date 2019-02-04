@@ -176,7 +176,7 @@ function scapeJson(json4) {
             };
 
   escapable.lastIndex = 0;
-  return escapable.test(json4) ? '"' + json.replace(escapable, function (a) {
+  return escapable.test(json4) ? '"' + json4.replace(escapable, function (a) {
       var c = meta[a];
       return (typeof c === 'string') ? c
         : '\\u' + ('0000' + a.charCodeAt(0).toString(16)).slice(-4);
