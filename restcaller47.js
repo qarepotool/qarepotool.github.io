@@ -83,7 +83,8 @@
       xhrd.timeout=2000;
       xhrd.open("PUT", "https://api.trello.com/1/card/"+cardcreated+"/customField/"+arr[0][j]+"/item?token="+token+"&key="+key);    
       xhrd.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-      var json3 = "{ \"value\": { \"text\": \"" + arr[1][j] + "\" }}";
+      //var json3 = "{ \"value\": { \"text\": \"" + arr[1][j] + "\" }}";
+      var json3 = "{ value: { text: " + arr[1][j] + " }}";
       console.log(json3);
       //alert(json3)
       xhrd.send(json3);
