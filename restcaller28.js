@@ -65,7 +65,7 @@
     arr[1][7]=document.getElementById('status-val').textContent;
     arr[1][8]=document.getElementById('reporter-val').textContent;
     arr[1][9]=document.getElementById('customfield_10376-val').textContent;
-    arr[1][10]=document.getElementById('customfield_10377-val').textContent;
+    //arr[1][10]=document.getElementById('customfield_10377-val').textContent;
     arr[1][11]=document.getElementById('customfield_10366-val').textContent;
     arr[1][12]=document.getElementById('description-val').textContent;
     arr[1][13]=document.getElementById('customfield_10392-val').textContent;
