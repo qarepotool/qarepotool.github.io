@@ -57,7 +57,7 @@
     arr[0][15]="5c532017aa78c45fabead47e";
     arr[1][0]=document.getElementById('key-val').textContent;
     arr[1][1]=document.getElementById('customfield_10476-val').textContent;
-    aux=document.getElementById('customfield_10361-val');
+    aux=document.getElementById('customfield_10361-val').textContent;
     arr[1][2]=aux.trim();
     
     //arr[1][2].options[arr[1][2].selectedIndex].text;
