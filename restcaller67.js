@@ -176,7 +176,6 @@ function Addlabeltocard(type,idcard){
   }
   var data2 = {};
   var xhrf = new XMLHttpRequest();
-  xhrf.timeout = 5000;
   xhrf.open("POST", "https://api.trello.com/1/cards/"+idcard+"/idLabels", false);
   xhrf.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   data2.key = key;
