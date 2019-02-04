@@ -55,10 +55,10 @@
     arr[0][13]="5c532003aec9b0223db3dd6d";
     arr[0][14]="5c53200fc348ab7ac13488bb";
     arr[0][15]="5c532017aa78c45fabead47e";
-    aux=document.getElementById('key-val').textContent;
-    arr[1][0]=aux.trim();
-    aux=document.getElementById('customfield_10476-val').textContent;
-    arr[1][1]=aux.trim();
+    arr[1][0]=document.getElementById('key-val').textContent.trim();
+    //=aux.trim();
+    arr[1][1]=document.getElementById('customfield_10476-val').textContent.trim();
+    //=aux.trim();
     aux=document.getElementById('customfield_10361-val').textContent;
     arr[1][2]=aux.trim();
     aux=document.getElementById('customfield_10363-val').textContent;
