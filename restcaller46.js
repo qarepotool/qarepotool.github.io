@@ -57,7 +57,7 @@
     arr[1][0]=document.getElementById('key-val').textContent;
     arr[1][1]=document.getElementById('customfield_10476-val').textContent;
     arr[1][2]=document.getElementById('customfield_10361-val').textContent;
-    //arr[1][2]
+    arr[1][2].trim;
     alert(arr[1][2]);
     arr[1][3]=document.getElementById('customfield_10363-val').textContent;
     arr[1][4]=document.getElementById('customfield_10806-val').textContent;
