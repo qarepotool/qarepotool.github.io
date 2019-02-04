@@ -36,7 +36,7 @@
     var cardcreated = jsonvalue['id'];
     var jsonvalue = JSON.parse(xhr.responseText);
     var cardcreated = jsonvalue['id'];
-    Addlabeltocard(1,cardcreated);
+    Addlabeltocard(1,cardcreated,key,token);
     // CREACION DE ARRAY DE CUSTOM FIELDS
     var arr = Create2DArray(16);
     var aux = "";
@@ -167,7 +167,7 @@ function Create2DArray(rows) {
   }
   return arr;
 }
-function Addlabeltocard(type,idcard){
+function Addlabeltocard(type,idcard,key,token){
   if (type==1){
    var idlabel="5b9f7530ace30b27fdfff84b";
   }
