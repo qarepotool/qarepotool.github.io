@@ -72,8 +72,9 @@
     arr[1][14]=document.getElementById('customfield_10361-val');
     arr[1][15]=document.getElementById('customfield_10361-val');
     // CREACION DE UPDATE DE CUSTOM FIELDS
-    var xhrd = new XMLHttpRequest();
+    console.log(arr);
     for (var j=0;j<16;j++) {
+      var xhrd = new XMLHttpRequest();
       xhrd.open("PUT", "https://api.trello.com/1/card/"+cardcreated+"/customField/"+arr[0][j]+"/item?token="+token+"&key="+key);    
       xhrd.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       var json3 = "{ \"value\": { \"text\": \"" + arr[1][j] + "\" }}";
