@@ -36,6 +36,7 @@
     var cardcreated = jsonvalue['id'];
     var jsonvalue = JSON.parse(xhr.responseText);
     var cardcreated = jsonvalue['id'];
+    Addlabeltocard(1,cardcreated);
     // CREACION DE ARRAY DE CUSTOM FIELDS
     var arr = Create2DArray(16);
     var aux = "";
@@ -135,6 +136,7 @@
     } else {
       arr[1][15] = aux = document.getElementById('customfield_10361-val').textContent.trim();
     }
+
     // CREACION DE UPDATE DE CUSTOM FIELDS
     for (var j = 0; j < 16; j++) {
         var xhrd = new XMLHttpRequest();
@@ -166,3 +168,23 @@ function Create2DArray(rows) {
   }
   return arr;
 }
+function Addlabeltocard(type,idcard){
+  if (type==1){
+   var idlabel="5b9f7530ace30b27fdfff84b";
+  }
+  else{
+   var idlabel="5c58c5b30f74206283678232";
+  }
+  var data2 = {};
+  var xhrf = new XMLHttpRequest();
+  xhrf.timeout = 5000;
+  xhrf.open("POST", "https://api.trello.com/1/cards/"+idcard+"/idLabels", false);
+  xhrf.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  data2.key = key;
+  data2.token = token;
+  data2.value = "5b61a1ff8d7233289bbb1f1b";
+  var json2 = JSON.stringify(data2);
+  xhr.send(json2)
+}
+
+
