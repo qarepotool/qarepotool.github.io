@@ -140,7 +140,6 @@
     // CREACION DE UPDATE DE CUSTOM FIELDS
     for (var j = 0; j < 16; j++) {
         var xhrd = new XMLHttpRequest();
-        xhrd.timeout = 5000;
         xhrd.open("PUT", "https://api.trello.com/1/card/" + cardcreated + "/customField/" + arr[0][j] + "/item?token=" + token + "&key=" + key);
         xhrd.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         if (arr[1][j]== null){
