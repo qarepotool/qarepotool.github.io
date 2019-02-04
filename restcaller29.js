@@ -68,7 +68,7 @@
     //arr[1][10]=document.getElementById('customfield_10377-val').textContent;
     arr[1][11]=document.getElementById('customfield_10366-val').textContent;
     arr[1][12]=document.getElementById('description-val').textContent;
-    arr[1][13]=document.getElementById('customfield_10392-val').textContent;
+    //arr[1][13]=document.getElementById('customfield_10392-val').textContent;
     arr[1][14]=document.getElementById('customfield_10361-val').textContent;
     arr[1][15]=document.getElementById('customfield_10361-val').textContent;
     // CREACION DE UPDATE DE CUSTOM FIELDS
