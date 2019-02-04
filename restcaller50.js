@@ -56,7 +56,7 @@
     arr[0][15]="5c532017aa78c45fabead47e";
     arr[1][0]=document.getElementById('key-val').textContent;
     arr[1][1]=document.getElementById('customfield_10476-val').textContent;
-    arr[1][2]=document.getElementById('customfield_10361-val').text;
+    arr[1][2]=document.getElementById('customfield_10361-val').innerHTML;
     //arr[1][2].options[arr[1][2].selectedIndex].text;
     alert(arr[1][2]);
     arr[1][3]=document.getElementById('customfield_10363-val').textContent;
@@ -85,11 +85,12 @@
       xhrd.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       var json3 = "{ \"value\": { \"text\": \"" + arr[1][j] + "\" }}";
       //var json3 = "{ value: { text: " + arr[1][j] + " }}";
-      console.log(json3);
+      
       //alert(json3)
       xhrd.send(json3);
     }
     }
+    console.log(json3);
   };
 }).call(this);
 
