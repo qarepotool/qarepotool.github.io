@@ -75,8 +75,8 @@
     arr[1][8]=aux.trim();
     aux=document.getElementById('customfield_10376-val').textContent;
     arr[1][9]=aux.trim();
-    aux=document.getElementById('customfield_10377-val').textContent;
-    arr[1][10]=aux.trim();
+   //aux=document.getElementById('customfield_10377-val').textContent;
+   // arr[1][10]=aux.trim();
     aux=document.getElementById('customfield_10366-val').textContent;
     arr[1][11]=aux.trim();
     aux=document.getElementById('description-val').textContent;
