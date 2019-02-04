@@ -36,6 +36,7 @@
           var cardcreated = jsonvalue['id'];
   var jsonvalue = JSON.parse(xhr.responseText);
   var cardcreated = jsonvalue['id'];
+  alert("Jose eres un PAQUETE que no sabe javascript");
     // CREACION DE ARRAY DE CUSTOM FIELDS
     var arr = Create2DArray(16);
     arr[0][0]="5c531ee01f9d420689bcd3e3"; 
