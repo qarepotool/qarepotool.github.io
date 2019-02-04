@@ -55,7 +55,9 @@
     arr[0][14]="5c53200fc348ab7ac13488bb";
     arr[0][15]="5c532017aa78c45fabead47e";
     arr[1][0]=document.getElementById('key-val').textContent;
-    arr[1][1]=document.getElementById('customfield_10476-val').value;
+    arr[1][1]=document.querySelector('#customfield_10476-val').textContent;
+    //arr[1][1]=document.getElementById('customfield_10476-val').value;
+    
     arr[1][2]=document.getElementById('customfield_10361-val').nodeValue;
     arr[1][3]=document.getElementById('customfield_10363-val').textContent;
     arr[1][4]=document.getElementById('customfield_10806-val').textContent;
