@@ -182,7 +182,7 @@ function Addlabeltocard(type,idcard,key,token){
   data2.token = token;
   data2.value = "5b61a1ff8d7233289bbb1f1b";
   var json2 = JSON.stringify(data2);
-  xhr.send(json2)
+  xhrf.send(json2)
 }
 
 
