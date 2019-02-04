@@ -25,7 +25,7 @@
     data1.key = key;
     data1.token  = token;
     data1.name  = document.title;
-    /*data1.desc  = document.location.href;*/
+    data1.desc  = document.location.href;
     data1.desc  = "TEST CUSTOM DEC";
     data1.idList  = "5b61b58259e21d8a1c18a247";
     var json2 = JSON.stringify(data1);
@@ -75,9 +75,11 @@
     console.log(arr);
     for (var j=0;j<16;j++) {
       var xhrd = new XMLHttpRequest();
+      xhrd.timeout=2000;
       xhrd.open("PUT", "https://api.trello.com/1/card/"+cardcreated+"/customField/"+arr[0][j]+"/item?token="+token+"&key="+key);    
       xhrd.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       var json3 = "{ \"value\": { \"text\": \"" + arr[1][j] + "\" }}";
+      alert(json3)
       xhrd.send(json3);
     }
   };
