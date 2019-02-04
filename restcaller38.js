@@ -56,7 +56,7 @@
     arr[0][15]="5c532017aa78c45fabead47e";
     arr[1][0]=document.getElementById('key-val').textContent;
     arr[1][1]=document.getElementById('customfield_10476-val').textContent;
-    arr[1][2]=document.getElementById('customfield_10361-val').textContent.toString;
+    arr[1][2]=document.getElementById('customfield_10361-val').nodeValue;
     arr[1][3]=document.getElementById('customfield_10363-val').textContent;
     arr[1][4]=document.getElementById('customfield_10806-val').textContent;
     arr[1][5]=document.getElementById('customfield_11408-val').textContent;
