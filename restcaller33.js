@@ -29,9 +29,9 @@
     data1.idList  = "5b61b58259e21d8a1c18a247";
     var json2 = JSON.stringify(data1);
     xhr.send(json2)
-    console.log(xhr.responseText);
-    console.log(xhr.readyState);
-    console.log(xhr.status);
+    //console.log(xhr.responseText);
+    //console.log(xhr.readyState);
+    //console.log(xhr.status);
           var jsonvalue = JSON.parse(xhr.responseText);
           var cardcreated = jsonvalue['id'];
   var jsonvalue = JSON.parse(xhr.responseText);
@@ -71,7 +71,7 @@
     arr[1][14]=document.getElementById('customfield_10361-val').textContent;
     arr[1][15]=document.getElementById('customfield_10361-val').textContent;
     // CREACION DE UPDATE DE CUSTOM FIELDS
-    console.log(arr);
+    //console.log(arr);
     for (var j=0;j<16;j++) {
       if(arr[1][j]==null){
         console.log("Este campo es null" + arr[1][j]);
@@ -79,7 +79,7 @@
       else{
       var xhrd = new XMLHttpRequest();
       xhrd.timeout=2000;
-      xhrd.open("PUT", "https://api.trello.com/1/card/"+cardcreated+"/customField/"+arr[0][j]+"/item?token="+token+"&key="+key);    
+      xhrd.open("PUT", "https://api.trello.com/1/card/"+cardcreated+"/customFields/"+arr[0][j]+"/item?token="+token+"&key="+key);    
       xhrd.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       var json3 = "{ \"value\": { \"text\": \"" + arr[1][j] + "\" }}";
       console.log(json3);
