@@ -71,8 +71,8 @@
     arr[1][6]=aux.trim();
     aux=document.getElementById('status-val').textContent;
     arr[1][7]=aux.trim();
-    aux=document.getElementById('customfield_10373-val').textContent;
-    arr[1][8]=aux.trim();
+    //aux=document.getElementById('customfield_10373-val').textContent;
+    //arr[1][8]=aux.trim();
     aux=document.getElementById('customfield_10376-val').textContent;
     arr[1][9]=aux.trim();
    //aux=document.getElementById('customfield_10377-val').textContent;
