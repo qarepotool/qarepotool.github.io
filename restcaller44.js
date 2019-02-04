@@ -36,7 +36,6 @@
           var cardcreated = jsonvalue['id'];
   var jsonvalue = JSON.parse(xhr.responseText);
   var cardcreated = jsonvalue['id'];
-  alert("Jose eres un PAQUETE que no sabe javascript");
     // CREACION DE ARRAY DE CUSTOM FIELDS
     var arr = Create2DArray(16);
     arr[0][0]="5c531ee01f9d420689bcd3e3"; 
@@ -56,13 +55,9 @@
     arr[0][14]="5c53200fc348ab7ac13488bb";
     arr[0][15]="5c532017aa78c45fabead47e";
     arr[1][0]=document.getElementById('key-val').textContent;
-    //arr[1][1]=document.querySelector('customfield_10476-val').textContent;
-
-    arr[1][1]=document.getElementById('customfield_10476-val').replace(/ /g, "");
-    //arr[1][1]replace(/ /g, "")
-    alert( arr[1][1]);
-    
-    arr[1][2]=document.getElementById('customfield_10361-val').textContent;
+    arr[1][1]=document.getElementById('customfield_10476-val').textContent;
+    arr[1][2]=document.getElementById('customfield_10361-val');
+    alert(arr[1][2]);
     arr[1][3]=document.getElementById('customfield_10363-val').textContent;
     arr[1][4]=document.getElementById('customfield_10806-val').textContent;
     arr[1][5]=document.getElementById('customfield_11408-val').textContent;
