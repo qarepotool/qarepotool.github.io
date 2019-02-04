@@ -55,28 +55,35 @@
     arr[0][13]="5c532003aec9b0223db3dd6d";
     arr[0][14]="5c53200fc348ab7ac13488bb";
     arr[0][15]="5c532017aa78c45fabead47e";
-    arr[1][0]=document.getElementById('key-val').textContent;
-    arr[1][1]=document.getElementById('customfield_10476-val').textContent;
+    aux=document.getElementById('key-val').textContent;
+    arr[1][0]=aux.trim();
+    aux=document.getElementById('customfield_10476-val').textContent;
+    arr[1][1]=aux.trim();
     aux=document.getElementById('customfield_10361-val').textContent;
     arr[1][2]=aux.trim();
-    
-    //arr[1][2].options[arr[1][2].selectedIndex].text;
-    alert(arr[1][2]);
-    arr[1][3]=document.getElementById('customfield_10363-val').textContent;
-    arr[1][4]=document.getElementById('customfield_10806-val').textContent;
-    arr[1][5]=document.getElementById('customfield_11408-val').textContent;
-    arr[1][6]=document.getElementById('type-val').textContent;
-    arr[1][7]=document.getElementById('status-val').textContent;
-    arr[1][8]=document.getElementById('reporter-val').textContent;
-    arr[1][9]=document.getElementById('customfield_10376-val').textContent;
-    //arr[1][10]=document.getElementById('customfield_10377-val').textContent;
-    arr[1][11]=document.getElementById('customfield_10366-val').textContent;
-    arr[1][12]=document.getElementById('description-val').textContent;
-    //arr[1][13]=document.getElementById('customfield_10392-val').textContent;
-    arr[1][14]=document.getElementById('customfield_10361-val').textContent;
-    arr[1][15]=document.getElementById('customfield_10361-val').textContent;
+    aux=document.getElementById('customfield_10363-val').textContent;
+    arr[1][3]=aux.trim();
+    aux=document.getElementById('customfield_10806-val').textContent;
+    arr[1][4]=aux.trim();
+    aux=document.getElementById('customfield_11408-val').textContent;
+    arr[1][5]=aux.trim();
+    aux=document.getElementById('type-val').textContent;
+    arr[1][6]=aux.trim();
+    aux=document.getElementById('status-val').textContent;
+    arr[1][7]=aux.trim();
+    aux=document.getElementById('reporter-val').textContent;
+    arr[1][8]=aux.trim();
+    aux=document.getElementById('customfield_10376-val').textContent;
+    arr[1][9]=aux.trim();
+    aux=document.getElementById('customfield_10366-val').textContent;
+    arr[1][11]=aux.trim();
+    aux=document.getElementById('description-val').textContent;
+    arr[1][12]=aux.trim();
+    aux=document.getElementById('customfield_10361-val').textContent;
+    arr[1][14]=aux.trim();
+    aux=document.getElementById('customfield_10361-val').textContent;
+    arr[1][15]=aux.trim();
     // CREACION DE UPDATE DE CUSTOM FIELDS
-    //console.log(arr);
     for (var j=0;j<16;j++) {
       if(arr[1][j]==null){
         console.log("Este campo es null" + arr[1][j]);
