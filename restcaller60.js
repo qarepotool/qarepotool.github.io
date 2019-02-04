@@ -137,10 +137,6 @@
     }
     // CREACION DE UPDATE DE CUSTOM FIELDS
     for (var j = 0; j < 16; j++) {
-      if (arr[1][j] == null) {
-        console.log("Este campo es null " + arr[1][j]);
-      }
-      else {
         var xhrd = new XMLHttpRequest();
         xhrd.timeout = 2000;
         xhrd.open("PUT", "https://api.trello.com/1/card/" + cardcreated + "/customField/" + arr[0][j] + "/item?token=" + token + "&key=" + key);
@@ -150,7 +146,6 @@
 
         //alert(json3)
         xhrd.send(json3);
-      }
     }
     console.log(json3);
   };
