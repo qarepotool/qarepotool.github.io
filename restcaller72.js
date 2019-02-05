@@ -116,7 +116,7 @@
       console.log("Este campo es null " + arr[1][11]);
     } else {
       arr[1][11] = document.getElementById('customfield_10366-val').textContent.trim();
-      Addduetocard(arr[1][11],idcard,key,token);
+      Addduetocard(arr[1][11],cardcreated,key,token);
     }
     if (document.getElementById('description-val') == null) {
       console.log("Este campo es null " + arr[1][12]);
