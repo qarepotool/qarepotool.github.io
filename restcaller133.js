@@ -26,9 +26,7 @@ var cardcreated=null;
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === this.DONE) {
         console.log(this.responseText);
-      }
-    });
-  };
+      };
     // CREACION DE ARRAY DE CUSTOM FIELDS
     arr[0][0] = "5c531ee01f9d420689bcd3e3";
     arr[0][1] = "5c531f09f4c44165b6600933";
@@ -127,7 +125,7 @@ var cardcreated=null;
     } else {
       arr[1][15] = aux = document.getElementById('customfield_10361-val').textContent.trim();
     }
-  let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
     width=350,height=400,left=100,top=100`;
     ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params);
   
@@ -220,6 +218,6 @@ var cardcreated=null;
   xhrg.open("PUT", "https://api.trello.com/1/cards/"+ idcard+"?due="+newdate+"&key="+key+"&token="+token, false);
   xhrg.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xhrg.send();
-}
-}
-)
+  }
+    
+})}})
