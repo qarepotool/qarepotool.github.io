@@ -3,6 +3,9 @@ var tareaomnia=null;
 (function() {
   var e;
   var ventana;
+  let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+  width=350,height=400,left=100,top=100`;
+  ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params);
   if (!(typeof jQuery !== "undefined" && jQuery !== null)) {
     e = document.createElement('script');
     e.setAttribute('type', 'text/javascript');
@@ -17,9 +20,7 @@ var tareaomnia=null;
       if (this.readyState === this.DONE) {
         console.log(this.responseText);
       }
-  let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
-  width=350,height=400,left=100,top=100`;
-  ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params)
+
 }).call(this);
 
 function evaluatevalues(event){
