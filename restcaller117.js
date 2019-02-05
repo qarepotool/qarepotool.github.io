@@ -209,11 +209,13 @@ function typeofCT() {
 
 function test(event){
  alert ("hola");
- if (document.getElementById('element_2') == null) {
+ if (document.getElementById('element_2').textContent == "") {
   alert ("Tipo de entrega no informado");
+  alert (document.getElementById('element_2').textContent);
 } 
-if (document.getElementById('element_1') == null) {
-  alert ("Tarea de omnia");
+ if (document.getElementById('element_1').textContent == "") {
+  alert ("Tarea de omnia no informada");
+  alert (document.getElementById('element_1').textContent);
 }
 
 
