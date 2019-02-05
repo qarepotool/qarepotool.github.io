@@ -126,7 +126,7 @@
     if (document.getElementById('customfield_10392-val') == null) {
       console.log("Este campo es null " + arr[1][13]);
     } else {
-      arr[1][13] = document.getElementById('customfield_10392-val').textContent;
+    //  arr[1][13] = document.getElementById('customfield_10392-val').textContent;
     }
     if (document.getElementById('customfield_10361-val') == null) {
       console.log("Este campo es null " + arr[1][14]);
@@ -138,7 +138,7 @@
     } else {
       arr[1][15] = aux = document.getElementById('customfield_10361-val').textContent.trim();
     }
-
+    typeofCT();
     // CREACION DE UPDATE DE CUSTOM FIELDS
     for (var j = 0; j < 16; j++) {
         var xhrd = new XMLHttpRequest();
@@ -157,7 +157,8 @@
         xhrd.send(json4);  
         }
     }
-    console.log(json3);
+
+    //console.log(json3);
   };
 }).call(this);
 
@@ -194,3 +195,10 @@ function Addduetocard(date,idcard,key,token){
   xhrg.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xhrg.send();
 }
+
+(function typeofCT() {
+  var e;
+  let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+  width=350,height=400,left=100,top=100`;
+  window.open("https://qarepotool.github.io/form/form.html", name, params)
+}).call(this);
