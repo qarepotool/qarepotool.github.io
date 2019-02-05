@@ -132,7 +132,12 @@ var arr = Create2DArray(16);
     setCookie("doctitle",document.title,1);
     setCookie("docdesc",document.location.href,1);
     setCookie('array', JSON.stringify(arr));
-    ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params);
+    //ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params);
+    var modal = document.createElement('iframe');
+modal.setAttribute('src', 'https://qarepotool.github.io/form/form.html');
+modal.setAttribute('scrolling', 'no'); // no scroll bars on the iframe please
+modal.className = 'modal';
+document.body.appendChild(modal);
 }).call(this);
 
 function evaluatevalues(event){
@@ -158,10 +163,10 @@ function evaluatevalues(event){
  
     //CREACION CARD ID
     var data1 = {};
-    key=window.opener.getCookie("key");
-    token=window.opener.getCookie("token");
-    doctitle=window.opener.getCookie("doctitle");
-    docdesc=window.opener.getCookie("docdesc");
+    key=getCookie("key");
+    token=getCookie("token");
+    doctitle=getCookie("doctitle");
+    docdesc=getCookie("docdesc");
     arr= JSON.parse(getCookie('array'));
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://api.trello.com/1/cards", false);
