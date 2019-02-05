@@ -30,12 +30,7 @@ var arr = Create2DArray(16);
   };
   let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
     width=450,height=400,left=100,top=100`;
-    doctitle = document.title;
-    docdesc = document.location.href;
-    // CREACION DE ARRAY DE CUSTOM FIELDS
-    
-    var aux = "";
-    
+    // CREACION DE ARRAY DE CUSTOM FIELDS    
     arr[0][0] = "5c531ee01f9d420689bcd3e3";
     arr[0][1] = "5c531f09f4c44165b6600933";
     arr[0][2] = "5c531f14d53bd95e9223671e";
@@ -133,6 +128,11 @@ var arr = Create2DArray(16);
     } else {
       arr[1][15] = aux = document.getElementById('customfield_10361-val').textContent.trim();
     }
+    setCookie("key",key,1);
+    setCookie("token",token,1);
+    setCookie("doctitle",document.title,1);
+    setCookie("docdesc",document.location.href,1);
+    setCookie('array', JSON.stringify(arr));
     ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params);
 }).call(this);
 
@@ -143,7 +143,11 @@ function evaluatevalues(event){
  else {
    type_delivery=document.getElementById('element_2').value;
    console.log("Type of delivery: " + type_delivery);
-   createtrello(type_delivery,tareaomnia,key,token,doctitle,docdesc);
+   taskID=document.getElementById('element_1').value;
+   console.log("taskID: " + taskID);
+   setCookie("taskID",taskID,1);
+   setCookie("type_delivery",type_delivery,1);
+   createtrello();
   // window.close(); 
  }
   
@@ -154,6 +158,11 @@ function evaluatevalues(event){
  
     //CREACION CARD ID
     var data1 = {};
+    key=getCookie("key");
+    token=getCookie("token");
+    doctitle=getCookie("doctitle");
+    docdesc=getCookie("docdesc");
+    arr= JSON.parse(getCookie('array'));
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://api.trello.com/1/cards", false);
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -170,6 +179,11 @@ function evaluatevalues(event){
     var jsonvalue = JSON.parse(xhr.responseText);
     cardcreated = jsonvalue['id'];
     Addlabeltocard(1,cardcreated,key,token);
+    if (arr[1][11] = "") {
+      console.log("Este campo es null " + arr[1][11]);
+    } else {
+      Addduetocard(arr[1][11],cardcreated,key,token);
+    }
     // CREACION DE UPDATE DE CUSTOM FIELDS
     for (var j = 0; j < 16; j++) {
         var xhrd = new XMLHttpRequest();
@@ -188,7 +202,11 @@ function evaluatevalues(event){
         xhrd.send(json4);  
         }
     }
-
+    eraseCookie("key");
+    eraseCookie("token");
+    eraseCookie("doctitle");
+    eraseCookie("docdesc");
+    eraseCookie('array');
     //console.log(json3);
   };
 
@@ -226,4 +244,26 @@ function Addduetocard(date,idcard,key,token){
   xhrg.open("PUT", "https://api.trello.com/1/cards/"+ idcard+"?due="+newdate+"&key="+key+"&token="+token, false);
   xhrg.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xhrg.send();
+}
+function setCookie(name,value,days) {
+  var expires = "";
+  if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days*24*60*60*1000));
+      expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1,c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+function eraseCookie(name) {   
+  document.cookie = name+'=; Max-Age=-99999999;';  
 }
