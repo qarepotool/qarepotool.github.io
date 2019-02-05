@@ -32,16 +32,10 @@ function evaluatevalues(event){
  else {
    type_delivery=document.getElementById('element_2').value;
    console.log("Type of delivery: " + type_delivery);
+   createtrello(type_delivery,tareaomnia);
+   window.close(); 
  }
-  if (document.getElementById('element_1').value == "") {
-   alert ("Tarea de omnia no informada");
- }
- else{
-   tareaomnia=document.getElementById('element_1').value;
-   console.log("Tarea de omnia: " + tareaomnia);
- }
-  window.close(); 
-  createtrello(type_delivery,tareaomnia);
+  
   //ventana.close;
  }
 
