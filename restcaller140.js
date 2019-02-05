@@ -154,6 +154,7 @@ function evaluatevalues(event){
  
     //CREACION CARD ID
     var data1 = {};
+    var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://api.trello.com/1/cards", false);
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     data1.key = key;
