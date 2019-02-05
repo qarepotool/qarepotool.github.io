@@ -2,10 +2,24 @@ var type_delivery=null;
 var tareaomnia=null;
 (function() {
   var e;
+  var ventana;
+  if (!(typeof jQuery !== "undefined" && jQuery !== null)) {
+    e = document.createElement('script');
+    e.setAttribute('type', 'text/javascript');
+    e.setAttribute('charset', 'UTF-8');
+    e.setAttribute('src', '//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js');
+    document.body.appendChild(e);
+  }
+  window.saveTrelloCard = function (idList, key, token) {
+    var data = null;
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === this.DONE) {
+        console.log(this.responseText);
+      }
   let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
   width=350,height=400,left=100,top=100`;
   ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params)
-  document.getElementById('saveForm').onclick=test() ;
 }).call(this);
 
 function evaluatevalues(event){
@@ -222,4 +236,4 @@ function Addduetocard(date,idcard,key,token){
   xhrg.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xhrg.send();
 }
-
+  }})
