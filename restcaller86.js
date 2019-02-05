@@ -126,8 +126,7 @@
     if (document.getElementById('customfield_10392-val') == null) {
       console.log("Este campo es null " + arr[1][13]);
     } else {
-      document.getElementById('aui-uid-3').click;
-      arr[1][13] = document.getElementById('customfield_10392-val').innerText.trim();
+      arr[1][13] = document.getElementById('customfield_10392-val').textContent;
     }
     if (document.getElementById('customfield_10361-val') == null) {
       console.log("Este campo es null " + arr[1][14]);
