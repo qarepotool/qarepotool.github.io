@@ -207,20 +207,20 @@ function typeofCT() {
 
 function test(event){
  alert ("hola");
- if (document.getElementById('element_2').textContent == "") {
+ if (document.getElementById('element_2').value == "") {
   alert ("Tipo de entrega no informado");
-  alert (document.getElementById('element_2').textContent);
+  alert (document.getElementById('element_2').value);
 } 
 else {
-  type_delivery=document.getElementById('element_2').textContent;
+  type_delivery=document.getElementById('element_2').value;
   console.log("Type of delivery: " + type_delivery);
 }
- if (document.getElementById('element_1').textContent == "") {
+ if (document.getElementById('element_1').value == "") {
   alert ("Tarea de omnia no informada");
-  alert (document.getElementById('element_1').textContent);
+  alert (document.getElementById('element_1').value);
 }
 else{
-  tareaomnia=document.getElementById('element_1').textContent;
+  tareaomnia=document.getElementById('element_1').value;
   console.log("Tarea de omnia: " + tareaomnia);
 }
  window.close;
