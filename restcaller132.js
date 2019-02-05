@@ -19,7 +19,9 @@ var cardcreated=null;
     var data = null;
     idList=idList1;
     key=key1;
+    console.log(key);
     token=token1;
+    console.log(token);
     var xhr = new XMLHttpRequest();
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === this.DONE) {
@@ -128,21 +130,19 @@ var cardcreated=null;
   let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
     width=350,height=400,left=100,top=100`;
     ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params);
-}).call(this);
-
-function evaluatevalues(event){
-  if (document.getElementById('element_2').value == "") {
-   alert ("Tipo de entrega no informado");
- } 
- else {
-   type_delivery=document.getElementById('element_2').value;
-   tareaomnia=document.getElementById('element_1').value;
-   console.log("Type of delivery: " + type_delivery);
-   createtrello(type_delivery,tareaomnia);
-   window.close(); 
- }
- }
-
+  
+  function evaluatevalues(event){
+    if (document.getElementById('element_2').value == "") {
+     alert ("Tipo de entrega no informado");
+   } 
+   else {
+     type_delivery=document.getElementById('element_2').value;
+     tareaomnia=document.getElementById('element_1').value;
+     console.log("Type of delivery: " + type_delivery);
+     createtrello(type_delivery,tareaomnia);
+     window.close(); 
+   }
+   }
   function createtrello(type_delivery,tareaomnia) {
   var e;
   var ventana;
@@ -186,19 +186,16 @@ function evaluatevalues(event){
         {
         xhrd.send(json4);  
         }
+      }
     }
-
-    //console.log(json3);
-  };
-
-function Create2DArray(rows) {
+  function Create2DArray(rows) {  
   var arr = [];
   for (var i = 0; i < rows; i++) {
     arr[i] = [];
   }
   return arr;
-}
-function Addlabeltocard(type,idcard,key,token){
+  }
+  function Addlabeltocard(type,idcard,key,token){
   if (type_delivery==1){
    var idlabel="5b9f7530ace30b27fdfff84b";
   }
@@ -214,8 +211,8 @@ function Addlabeltocard(type,idcard,key,token){
   data2.value = idlabel;
   var json2 = JSON.stringify(data2);
   xhrf.send(json2);
-}
-function Addduetocard(date,idcard,key,token){
+  }
+  function Addduetocard(date,idcard,key,token){
   var data3 = {};
   var xhrg = new XMLHttpRequest();
   var initial = date.split(/\//);
@@ -224,3 +221,5 @@ function Addduetocard(date,idcard,key,token){
   xhrg.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xhrg.send();
 }
+}
+)
