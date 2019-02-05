@@ -128,8 +128,7 @@ var arr = Create2DArray(16);
     } else {
       arr[1][15] = aux = document.getElementById('customfield_10361-val').textContent.trim();
     }
-    setCookie("key",key,1);
-    setCookie("token",token,1);
+
     setCookie("doctitle",document.title,1);
     setCookie("docdesc",document.location.href,1);
     setCookie('array', JSON.stringify(arr));
@@ -145,10 +144,10 @@ function evaluatevalues(event){
    console.log("Type of delivery: " + type_delivery);
    taskID=document.getElementById('element_1').value;
    console.log("taskID: " + taskID);
+   window.close(); 
    setCookie("taskID",taskID,1);
    setCookie("type_delivery",type_delivery,1);
    createtrello();
-  // window.close(); 
  }
   
   //ventana.close;
