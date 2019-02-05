@@ -190,11 +190,11 @@ function Addduetocard(date,idcard,key,token){
   var data3 = {};
   var xhrg = new XMLHttpRequest();
   var newdate = date.split("-").reverse().join("-");
-  xhrg.open("PUT", "https://api.trello.com/1/cards/"+ idcard + "?due="+newdate, false);
+  xhrg.open("PUT", "https://api.trello.com/1/cards/"+ idcard, false);
   xhrg.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  data3.due = newdate;
   data3.key = key;
   data3.token = token;
-  data3.value = idlabel;
   var json3 = JSON.stringify(data3);
   xhrg.send(json3);
 }
