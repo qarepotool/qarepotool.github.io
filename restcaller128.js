@@ -10,7 +10,6 @@ var tareaomnia=null;
     e.setAttribute('src', '//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js');
     document.body.appendChild(e);
   }
-  typeofCT();
   window.saveTrelloCard = function (idList, key, token) {
     var data = null;
     var xhr = new XMLHttpRequest();
