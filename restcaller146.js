@@ -128,16 +128,14 @@ var arr = Create2DArray(16);
     } else {
       arr[1][15] = aux = document.getElementById('customfield_10361-val').textContent.trim();
     }
-
-    setCookie("doctitle",document.title,1);
-    setCookie("docdesc",document.location.href,1);
-    setCookie('array', JSON.stringify(arr));
-    //ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params);
-    var modal = document.createElement('iframe');
-modal.setAttribute('src', 'https://qarepotool.github.io/form/form.html');
-modal.setAttribute('scrolling', 'no'); // no scroll bars on the iframe please
-modal.className = 'modal';
-document.body.appendChild(modal);
+    var doctit=document.title; 
+    var docloc=document.location.href;
+    var popup =window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params);
+    popup.setCookie("doctitle",doctit,1);
+    popup.setCookie("docdesc",docloc,1);
+    popup.setCookie("key",key,1);
+    popup.setCookie("token",token,1);
+    popup.setCookie('array', JSON.stringify(arr));
 }).call(this);
 
 function evaluatevalues(event){
