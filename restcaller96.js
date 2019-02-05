@@ -199,9 +199,9 @@ function Addduetocard(date,idcard,key,token){
 function typeofCT() {
   var e;
   let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
-  width=350,height=400,left=100,top=100`;
+  width=350,height=200,left=100,top=100`;
   ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params)
-  document.getElementById('saveForm').onclick = test();
+  //document.getElementById('saveForm').onclick ;
 }
 
 function test(event){
