@@ -5,7 +5,7 @@ var tareaomnia=null;
   let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
   width=350,height=400,left=100,top=100`;
   ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params)
-})
+}).call(this);
 
 function evaluatevalues(event){
   if (document.getElementById('element_2').value == "") {
