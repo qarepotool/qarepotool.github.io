@@ -37,6 +37,7 @@
     var jsonvalue = JSON.parse(xhr.responseText);
     var cardcreated = jsonvalue['id'];
     Addlabeltocard(1,cardcreated,key,token);
+    
     // CREACION DE ARRAY DE CUSTOM FIELDS
     var arr = Create2DArray(16);
     var aux = "";
@@ -115,6 +116,7 @@
       console.log("Este campo es null " + arr[1][11]);
     } else {
       arr[1][11] = document.getElementById('customfield_10366-val').textContent.trim();
+      Addduetocard(arr[1][11],idcard,key,token);
     }
     if (document.getElementById('description-val') == null) {
       console.log("Este campo es null " + arr[1][12]);
@@ -182,7 +184,18 @@ function Addlabeltocard(type,idcard,key,token){
   data2.token = token;
   data2.value = idlabel;
   var json2 = JSON.stringify(data2);
-  xhrf.send(json2)
+  xhrf.send(json2);
 }
-
+function Addduetocard(date,idcard,key,token){
+  var data3 = {};
+  var xhrg = new XMLHttpRequest();
+  var newdate = date.split("-").reverse().join("-");
+  xhrg.open("PUT", "https://api.trello.com/1/cards/"+ idcard + "?due="+newdate, false);
+  xhrg.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  data3.key = key;
+  data3.token = token;
+  data3.value = idlabel;
+  var json3 = JSON.stringify(data3);
+  xhrg.send(json3);
+}
 
