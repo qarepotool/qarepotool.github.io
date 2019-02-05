@@ -1,10 +1,10 @@
-var type_delivery=null;
-var tareaomnia=null;
-var idList=null;
-var key=null;
-var token=null;
+var type_delivery;
+var tareaomnia;
+var idList;
+var key;
+var token;
 var arr = Create2DArray(16);
-var cardcreated=null;
+var cardcreated;
 (function () {
   var e;
   var ventana;
@@ -19,14 +19,14 @@ var cardcreated=null;
     var data = null;
     idList=idList1;
     key=key1;
-    console.log(key);
     token=token1;
-    console.log(token);
     var xhr = new XMLHttpRequest();
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === this.DONE) {
         console.log(this.responseText);
-      };
+      }
+    });
+  };
     // CREACION DE ARRAY DE CUSTOM FIELDS
     arr[0][0] = "5c531ee01f9d420689bcd3e3";
     arr[0][1] = "5c531f09f4c44165b6600933";
@@ -125,22 +125,24 @@ var cardcreated=null;
     } else {
       arr[1][15] = aux = document.getElementById('customfield_10361-val').textContent.trim();
     }
-    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+  let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
     width=350,height=400,left=100,top=100`;
     ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params);
-  
-  function evaluatevalues(event){
-    if (document.getElementById('element_2').value == "") {
-     alert ("Tipo de entrega no informado");
-   } 
-   else {
-     type_delivery=document.getElementById('element_2').value;
-     tareaomnia=document.getElementById('element_1').value;
-     console.log("Type of delivery: " + type_delivery);
-     createtrello(type_delivery,tareaomnia);
-     window.close(); 
-   }
-   }
+}).call(this);
+
+function evaluatevalues(event){
+  if (document.getElementById('element_2').value == "") {
+   alert ("Tipo de entrega no informado");
+ } 
+ else {
+   type_delivery=document.getElementById('element_2').value;
+   tareaomnia=document.getElementById('element_1').value;
+   console.log("Type of delivery: " + type_delivery);
+   createtrello(type_delivery,tareaomnia);
+   window.close(); 
+ }
+ }
+
   function createtrello(type_delivery,tareaomnia) {
   var e;
   var ventana;
@@ -184,16 +186,19 @@ var cardcreated=null;
         {
         xhrd.send(json4);  
         }
-      }
     }
-  function Create2DArray(rows) {  
+
+    //console.log(json3);
+  };
+
+function Create2DArray(rows) {
   var arr = [];
   for (var i = 0; i < rows; i++) {
     arr[i] = [];
   }
   return arr;
-  }
-  function Addlabeltocard(type,idcard,key,token){
+}
+function Addlabeltocard(type,idcard,key,token){
   if (type_delivery==1){
    var idlabel="5b9f7530ace30b27fdfff84b";
   }
@@ -209,8 +214,8 @@ var cardcreated=null;
   data2.value = idlabel;
   var json2 = JSON.stringify(data2);
   xhrf.send(json2);
-  }
-  function Addduetocard(date,idcard,key,token){
+}
+function Addduetocard(date,idcard,key,token){
   var data3 = {};
   var xhrg = new XMLHttpRequest();
   var initial = date.split(/\//);
@@ -218,6 +223,4 @@ var cardcreated=null;
   xhrg.open("PUT", "https://api.trello.com/1/cards/"+ idcard+"?due="+newdate+"&key="+key+"&token="+token, false);
   xhrg.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xhrg.send();
-  }
-    
-})}})
+}
