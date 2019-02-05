@@ -157,10 +157,10 @@ function evaluatevalues(event){
  
     //CREACION CARD ID
     var data1 = {};
-    key=getCookie("key");
-    token=getCookie("token");
-    doctitle=getCookie("doctitle");
-    docdesc=getCookie("docdesc");
+    key=window.opener.getCookie("key");
+    token=window.opener.getCookie("token");
+    doctitle=window.opener.getCookie("doctitle");
+    docdesc=window.opener.getCookie("docdesc");
     arr= JSON.parse(getCookie('array'));
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://api.trello.com/1/cards", false);
