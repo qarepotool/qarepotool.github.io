@@ -148,19 +148,20 @@ function evaluatevalues(event){
   var ventana;
     //CREACION CARD ID
     var data1 = {};
-    xhr.open("POST", "https://api.trello.com/1/cards", false);
-    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    var xha = new XMLHttpRequest();
+    xha.open("POST", "https://api.trello.com/1/cards", false);
+    xha.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     data1.key = key;
     data1.token = token;
     data1.name = document.title;
     data1.desc = document.location.href;
     data1.idList = "5b61b58259e21d8a1c18a247";
     var json2 = JSON.stringify(data1);
-    xhr.send(json2)
-    //console.log(xhr.responseText);
-    //console.log(xhr.readyState);
-    //console.log(xhr.status);
-    var jsonvalue = JSON.parse(xhr.responseText);
+    xha.send(json2)
+    //console.log(xha.responseText);
+    //console.log(xha.readyState);
+    //console.log(xha.status);
+    var jsonvalue = JSON.parse(xha.responseText);
     cardcreated = jsonvalue['id'];
     Addlabeltocard(1,cardcreated,key,token);
     if (arr[1][11] = "") {
