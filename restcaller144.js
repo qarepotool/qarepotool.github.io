@@ -144,10 +144,11 @@ function evaluatevalues(event){
    console.log("Type of delivery: " + type_delivery);
    taskID=document.getElementById('element_1').value;
    console.log("taskID: " + taskID);
-   window.close(); 
+   
    setCookie("taskID",taskID,1);
    setCookie("type_delivery",type_delivery,1);
    createtrello();
+   window.close(); 
  }
   
   //ventana.close;
