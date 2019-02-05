@@ -128,18 +128,7 @@ var cardcreated;
   let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
     width=350,height=400,left=100,top=100`;
     ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params);
-    function evaluatevalues(event){
-      if (document.getElementById('element_2').value == "") {
-       alert ("Tipo de entrega no informado");
-     } 
-     else {
-       type_delivery=document.getElementById('element_2').value;
-       tareaomnia=document.getElementById('element_1').value;
-       console.log("Type of delivery: " + type_delivery);
-       createtrello(type_delivery,tareaomnia);
-       window.close(); 
-     }
-     }
+
      function createtrello(type_delivery,tareaomnia) {
       var e;
       var ventana;
@@ -221,7 +210,18 @@ var cardcreated;
         return arr;
       }
 }).call(this);
-
+function evaluatevalues(event){
+  if (document.getElementById('element_2').value == "") {
+   alert ("Tipo de entrega no informado");
+ } 
+ else {
+   type_delivery=document.getElementById('element_2').value;
+   tareaomnia=document.getElementById('element_1').value;
+   console.log("Type of delivery: " + type_delivery);
+   createtrello(type_delivery,tareaomnia);
+   window.close(); 
+ }
+ }
 
 
   
