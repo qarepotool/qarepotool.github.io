@@ -6,6 +6,27 @@ var tareaomnia=null;
   width=350,height=400,left=100,top=100`;
   ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params)
 }).call(this);
+
+function evaluatevalues(event){
+  if (document.getElementById('element_2').value == "") {
+   alert ("Tipo de entrega no informado");
+ } 
+ else {
+   type_delivery=document.getElementById('element_2').value;
+   console.log("Type of delivery: " + type_delivery);
+ }
+  if (document.getElementById('element_1').value == "") {
+   alert ("Tarea de omnia no informada");
+ }
+ else{
+   tareaomnia=document.getElementById('element_1').value;
+   console.log("Tarea de omnia: " + tareaomnia);
+ }
+  window.close(); 
+  createtrello(type_delivery,tareaomnia);
+  //ventana.close;
+ }
+
   function createtrello(type_delivery,tareaomnia) {
   var e;
   var ventana;
@@ -201,22 +222,3 @@ function Addduetocard(date,idcard,key,token){
   xhrg.send();
 }
 
-function evaluate_values(event){
- if (document.getElementById('element_2').value == "") {
-  alert ("Tipo de entrega no informado");
-} 
-else {
-  type_delivery=document.getElementById('element_2').value;
-  console.log("Type of delivery: " + type_delivery);
-}
- if (document.getElementById('element_1').value == "") {
-  alert ("Tarea de omnia no informada");
-}
-else{
-  tareaomnia=document.getElementById('element_1').value;
-  console.log("Tarea de omnia: " + tareaomnia);
-}
- window.close(); 
- createtrello(type_delivery,tareaomnia);
- //ventana.close;
-}
