@@ -38,9 +38,9 @@
 			
 					<li class="buttons">
 			    <input type="hidden" name="form_id" value="47948" />
-				<input type="hidden" name="key_id" value="" />
-				<input type="hidden" name="token_id" value="" />
-				<input type="hidden" name="CT_id" value="" />
+				<input type="hidden" name="key"/>
+				<input type="hidden" name="token"/>
+				<input type="hidden" name="CT"/>
 				<input id="saveForm" class="button_text" name="submit" value="Submit" type="button" onclick="evaluatevalues()"/>
 		</li>
 			</ul>
@@ -50,9 +50,6 @@
 	</body>
 	<script> 
 		{
-			document.getElementById('key_id').value = key;
-			document.getElementById('token_id').value = token;
-			document.getElementById('CT_id').value = CT;
 			console.log("token: "+token);
 			console.log("key: "+key);
 			console.log("key: "+CT);
