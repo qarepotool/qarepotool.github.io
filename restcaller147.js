@@ -1,11 +1,3 @@
-var type_delivery;
-var tareaomnia;
-var key;
-var token;
-var doctitle;
-var carcreated;
-var docdesc;
-var arr = Create2DArray(16);
 (function () {
   var e;
   var ventana;
@@ -16,21 +8,38 @@ var arr = Create2DArray(16);
     e.setAttribute('src', '//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js');
     document.body.appendChild(e);
   }
-  window.saveTrelloCard = function (idList, key1, token1) {
+
+  window.saveTrelloCard = function (idList, key, token) {
     var data = null;
-    token=token1;
-    key=key1;
     var xhr = new XMLHttpRequest();
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === this.DONE) {
         console.log(this.responseText);
       }
     });
+    //CREACION CARD ID
+    var data1 = {};
+    xhr.open("POST", "https://api.trello.com/1/cards", false);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    data1.key = key;
+    data1.token = token;
+    data1.name = document.title;
+    data1.desc = document.location.href;
+    data1.idList = "5b61b58259e21d8a1c18a247";
+    var json2 = JSON.stringify(data1);
+    xhr.send(json2)
+    //console.log(xhr.responseText);
+    //console.log(xhr.readyState);
+    //console.log(xhr.status);
+    var jsonvalue = JSON.parse(xhr.responseText);
+    var cardcreated = jsonvalue['id'];
+    var jsonvalue = JSON.parse(xhr.responseText);
+    var cardcreated = jsonvalue['id'];
+    Addlabeltocard(1,cardcreated,key,token);
     
-  };
-  let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
-    width=450,height=400,left=100,top=100`;
-    // CREACION DE ARRAY DE CUSTOM FIELDS    
+    // CREACION DE ARRAY DE CUSTOM FIELDS
+    var arr = Create2DArray(16);
+    var aux = "";
     arr[0][0] = "5c531ee01f9d420689bcd3e3";
     arr[0][1] = "5c531f09f4c44165b6600933";
     arr[0][2] = "5c531f14d53bd95e9223671e";
@@ -106,7 +115,7 @@ var arr = Create2DArray(16);
       console.log("Este campo es null " + arr[1][11]);
     } else {
       arr[1][11] = document.getElementById('customfield_10366-val').textContent.trim();
-    //  Addduetocard(arr[1][11],cardcreated,key,token);
+      Addduetocard(arr[1][11],cardcreated,key,token);
     }
     if (document.getElementById('description-val') == null) {
       console.log("Este campo es null " + arr[1][12]);
@@ -128,65 +137,7 @@ var arr = Create2DArray(16);
     } else {
       arr[1][15] = aux = document.getElementById('customfield_10361-val').textContent.trim();
     }
-    var doctit=document.title; 
-    var docloc=document.location.href;
-    var popup =window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params);
-    popup.setCookie("doctitle",doctit,1);
-    popup.setCookie("docdesc",docloc,1);
-    popup.setCookie("key",key,1);
-    popup.setCookie("token",token,1);
-    popup.setCookie('array', JSON.stringify(arr));
-}).call(this);
-
-function evaluatevalues(event){
-  if (document.getElementById('element_2').value == "") {
-   alert ("Tipo de entrega no informado");
- } 
- else {
-   type_delivery=document.getElementById('element_2').value;
-   console.log("Type of delivery: " + type_delivery);
-   taskID=document.getElementById('element_1').value;
-   console.log("taskID: " + taskID);
-   
-   setCookie("taskID",taskID,1);
-   setCookie("type_delivery",type_delivery,1);
-   createtrello();
-   window.close(); 
- }
-  
-  //ventana.close;
- }
-
-  function createtrello(type_delivery,tareaomnia,key,token,doctitle,docdesc) {
- 
-    //CREACION CARD ID
-    var data1 = {};
-    key=getCookie("key");
-    token=getCookie("token");
-    doctitle=getCookie("doctitle");
-    docdesc=getCookie("docdesc");
-    arr= JSON.parse(getCookie('array'));
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://api.trello.com/1/cards", false);
-    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    data1.key = key;
-    data1.token = token;
-    data1.name = doctitle
-    data1.desc = docdesc
-    data1.idList = "5b61b58259e21d8a1c18a247";
-    var json2 = JSON.stringify(data1);
-    xhr.send(json2)
-    //console.log(xhr.responseText);
-    //console.log(xhr.readyState);
-    //console.log(xhr.status);
-    var jsonvalue = JSON.parse(xhr.responseText);
-    cardcreated = jsonvalue['id'];
-    Addlabeltocard(1,cardcreated,key,token);
-    if (arr[1][11] = "") {
-      console.log("Este campo es null " + arr[1][11]);
-    } else {
-      Addduetocard(arr[1][11],cardcreated,key,token);
-    }
+    //typeofCT();
     // CREACION DE UPDATE DE CUSTOM FIELDS
     for (var j = 0; j < 16; j++) {
         var xhrd = new XMLHttpRequest();
@@ -205,14 +156,10 @@ function evaluatevalues(event){
         xhrd.send(json4);  
         }
     }
-    eraseCookie("key");
-    eraseCookie("token");
-    eraseCookie("doctitle");
-    eraseCookie("docdesc");
-    eraseCookie('array');
+
     //console.log(json3);
   };
-
+}).call(this);
 
 
 function Create2DArray(rows) {
@@ -223,7 +170,7 @@ function Create2DArray(rows) {
   return arr;
 }
 function Addlabeltocard(type,idcard,key,token){
-  if (type_delivery==1){
+  if (type==1){
    var idlabel="5b9f7530ace30b27fdfff84b";
   }
   else{
@@ -248,25 +195,19 @@ function Addduetocard(date,idcard,key,token){
   xhrg.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xhrg.send();
 }
-function setCookie(name,value,days) {
-  var expires = "";
-  if (days) {
-      var date = new Date();
-      date.setTime(date.getTime() + (days*24*60*60*1000));
-      expires = "; expires=" + date.toUTCString();
-  }
-  document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+
+function typeofCT() {
+  var e;
+  let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+  width=350,height=400,left=100,top=100`;
+  ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params)
+  //test(document.getElementById('saveForm').onclick);
+ document.getElementById('saveForm').onclick=test() ;
 }
-function getCookie(name) {
-  var nameEQ = name + "=";
-  var ca = document.cookie.split(';');
-  for(var i=0;i < ca.length;i++) {
-      var c = ca[i];
-      while (c.charAt(0)==' ') c = c.substring(1,c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-  }
-  return null;
+
+function test(event){
+ alert ("hola");
+ //ventana.close;
 }
-function eraseCookie(name) {   
-  document.cookie = name+'=; Max-Age=-99999999;';  
-}
+
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('3(7.X){7["R"+a]=a;7["z"+a]=6(){7["R"+a](7.1k)};7.X("1e",7["z"+a])}E{7.19("z",a,15)}2 j=H V();6 a(){2 e=q.1d("1a");3(e){o(e,"P");2 N=B(q,"*","14");3((e.12<=10)||(N=="")){c(e,"P",d)}}4=B(q,"*","1n");k(i=0;i<4.b;i++){3(4[i].F=="1g"||4[i].F=="1f"||4[i].F=="1c"){4[i].1b=6(){r();c(v.5.5,"f",d)};4[i].O=6(){r();c(v.5.5,"f",d)};j.D(j.b,0,4[i])}E{4[i].O=6(){r();c(v.5.5,"f",d)};4[i].18=6(){o(v.5.5,"f")}}}2 C=17.16.13();2 A=q.M("11");3(C.K("J")+1){c(A[0],"J",d)}3(C.K("I")+1){c(A[0],"I",d)}}6 r(){k(2 i=0;i<j.b;i++){o(j[i].5.5,"f")}}6 B(m,y,w){2 x=(y=="*"&&m.Y)?m.Y:m.M(y);2 G=H V();w=w.1m(/\\-/g,"\\\\-");2 L=H 1l("(^|\\\\s)"+w+"(\\\\s|$)");2 n;k(2 i=0;i<x.b;i++){n=x[i];3(L.1j(n.8)){G.1i(n)}}1h(G)}6 o(p,T){3(p.8){2 h=p.8.Z(" ");2 U=T.t();k(2 i=0;i<h.b;i++){3(h[i].t()==U){h.D(i,1);i--}}p.8=h.S(" ")}}6 c(l,u,Q){3(l.8){2 9=l.8.Z(" ");3(Q){2 W=u.t();k(2 i=0;i<9.b;i++){3(9[i].t()==W){9.D(i,1);i--}}}9[9.b]=u;l.8=9.S(" ")}E{l.8=u}}',62,86,'||var|if|elements|parentNode|function|window|className|_16|initialize|length|addClassName|true|_1|highlighted||_10||el_array|for|_13|_6|_c|removeClassName|_e|document|safari_reset||toUpperCase|_14|this|_8|_9|_7|load|_4|getElementsByClassName|_3|splice|else|type|_a|new|firefox|safari|indexOf|_b|getElementsByTagName|_2|onfocus|no_guidelines|_15|event_load|join|_f|_11|Array|_17|attachEvent|all|split|450|body|offsetWidth|toLowerCase|guidelines|false|userAgent|navigator|onblur|addEventListener|main_body|onclick|file|getElementById|onload|radio|checkbox|return|push|test|event|RegExp|replace|element'.split('|'),0,{}))

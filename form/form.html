@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Detalles de la tarea</title>
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
-<script type="text/javascript" src="../restcaller146.js"></script>
+<script type="text/javascript" src="../trellocaller.js"></script>
 </head>
 <body id="main_body" >
 	
@@ -38,7 +38,9 @@
 			
 					<li class="buttons">
 			    <input type="hidden" name="form_id" value="47948" />
-			    
+				<input type="hidden" name="key_id" value="" />
+				<input type="hidden" name="token_id" value="" />
+				<input type="hidden" name="CT_id" value="" />
 				<input id="saveForm" class="button_text" name="submit" value="Submit" type="button" onclick="evaluatevalues()"/>
 		</li>
 			</ul>
@@ -46,4 +48,14 @@
 	</div>
 	<img id="bottom" src="bottom.png" alt="">
 	</body>
+	<script> 
+		{
+			document.getElementById('key_id').value = key;
+			document.getElementById('token_id').value = token;
+			document.getElementById('CT_id').value = CT;
+			console.log("token: "+token);
+			console.log("key: "+key);
+			console.log("key: "+CT);
+		}
+		</script>
 </html>
