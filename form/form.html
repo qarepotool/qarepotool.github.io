@@ -4,8 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Detalles de la tarea</title>
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
-<script type="text/javascript" src="../trellocaller4.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="restcaller112.js"></script>
+
 </head>
 <body id="main_body" >
 	
@@ -13,7 +13,7 @@
 	<div id="form_container">
 	
 		<h1><a>Detalles de la tarea</a></h1>
-		<form id="form_47948" class="appnitro"  method="POST" action="">
+		<form id="form_47948" class="appnitro"  method="GET" action="">
 					<div class="form_description">
 			<h2>Detalles de la tarea</h2>
 			<p>Introduce los detalles de la tarea a generar en Trello</p>
@@ -36,55 +36,15 @@
 			<input id="element_1" name="element_1" class="element text small" type="text" maxlength="255" value=""/> 
 		</div><p class="guidelines" id="guide_1"><small>ID de la tarea para imputar en Omnia Manager</small></p> 
 		</li>
-		<label class="description" for="element_3">Estimación </label>
-		<div>
-			<input id="element_3" name="element_3" class="element text small" type="text" maxlength="255" value=""/> 
-		</div><p class="guidelines" id="guide_1"><small>Estimación de la tarea</small></p> 
-		</li>
 			
 					<li class="buttons">
 			    <input type="hidden" name="form_id" value="47948" />
-				<input type="hidden" name="key" id="keyfield" value=""/>
-				<input type="hidden" name="token" id="tokenfield" value=""/>
-				<input type="hidden" name="CT" id="CTfield" value=""/>
-				<input id="saveForm" class="button_text" name="submit" value="Submit" type="button" onclick="evaluatevalues()"/>
+			    
+				<input id="saveForm" class="button_text" name="submit" value="Submit" type="button"/>
 		</li>
 			</ul>
 		</form>	
 	</div>
 	<img id="bottom" src="bottom.png" alt="">
-	<script> 
-		{
-			window.onload = load;
-			function load() {
-				var keyvalue = getUrlVars()["key"];
-				var tokenvalue = getUrlVars()["token"];
-				var CTaux = getUrlVars()["CT"];
-				var CTaux1 = decodeURIComponent(CTaux);
-				var CTarray= CTaux1.split("/ITDQACT-");
-				var CTvalue="ITDQACT-"+CTarray[1];
-				document.getElementById("keyfield").setAttribute('value', keyvalue);
-				document.getElementById("tokenfield").setAttribute('value', tokenvalue);
-				document.getElementById("CTfield").setAttribute('value', CTvalue);
-				CTvalorhidden=document.getElementById('CTfield').value;
-				var script = document.createElement('script');
-				script.src = "//jira.euipoqaportal.eu/jira/rest/api/2/issue/"+CTvalorhidden;
-				document.querySelector('head').appendChild(script);
-				function processJSONPResponse(data) {
-					var dataFromServer = data;
-					console.log(dataFromServer);
-				}
-				function getUrlVars() {
-    			var vars = {};
-    			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        		vars[key] = value;
-    			});
-    			return vars;
-				}
-			}
-
-}
-		</script>
 	</body>
-
 </html>
