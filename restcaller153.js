@@ -200,7 +200,7 @@ function typeofCT() {
   var e;
   let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
   width=350,height=400,left=100,top=100`;
-  ventana=window.open("https://qarepotool.github.io/form/form.html?var A=arr", "Datos propios", params)
+  ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params)
   //test(document.getElementById('saveForm').onclick);
  //document.getElementById('saveForm').onclick=test() ;
 }
