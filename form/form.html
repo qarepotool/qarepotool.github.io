@@ -53,8 +53,16 @@
 			window.onload = load;
 			function load() {
 				var keyvalue = getUrlVars()["key"];
+				var tokenvalue = getUrlVars()["token"];
+				var CTaux = getUrlVars()["CT"];
+				var CTarray= CTaux.split("/ITDQACT-")
+				var CTvalue="ITDQACT-"+CTarray[1]
 				document.getElementById("keyfield").setAttribute('value', keyvalue);
-                alert(document.getElementById("keyfield").value);
+				document.getElementById("tokenfield").setAttribute('value', tokenvalue);
+				document.getElementById("CTfield").setAttribute('value', CTvalue);
+				alert(document.getElementById("keyfield").value);
+				alert(document.getElementById("tokenfield").value);
+				alert(document.getElementById("CTfield").value);
       }
       function getUrlVars() {
     	var vars = {};
