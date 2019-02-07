@@ -7,7 +7,7 @@ function evaluatevalues(event){
      console.log("Type of delivery: " + type_delivery);
      taskID=document.getElementById('element_1').value;
      console.log("taskID: " + taskID);
-     getJIRAinfo()
+    // getJIRAinfo()
      
 
    //  createtrello();
@@ -17,7 +17,7 @@ function getJIRAinfo(){
     CTvalorhidden=document.getElementById('CTfield').value;
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://jira.euipoqaportal.eu/jira/rest/api/2/issue/"+CTvalorhidden, false);
-    xhr.setRequestHeader("Content-Type", "text/html;charset=UTF-8");
+    //xhr.setRequestHeader("Content-Type", "text/html;charset=UTF-8");
     xhr.send()
     //console.log(xhr.responseText);
     //console.log(xhr.readyState);
