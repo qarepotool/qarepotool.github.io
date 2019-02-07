@@ -39,9 +39,9 @@
 			
 					<li class="buttons">
 			    <input type="hidden" name="form_id" value="47948" />
-				<input type="hidden" name="key" id="key-field"/>
-				<input type="hidden" name="token" id="token-field"/>
-				<input type="hidden" name="CT" id="CT-field"/>
+				<input type="hidden" name="key" id="keyfield" value=""/>
+				<input type="hidden" name="token" id="tokenfield" value=""/>
+				<input type="hidden" name="CT" id="CTfield" value=""/>
 				<input id="saveForm" class="button_text" name="submit" value="Submit" type="button" onclick="evaluatevalues()"/>
 		</li>
 			</ul>
@@ -50,32 +50,19 @@
 	<img id="bottom" src="bottom.png" alt="">
 	<script> 
 		{
-
-		
-			var CT = getUtmParamByName('CT');
-  function getUtmParamByName(utmname) {
-
-    utmname = utmname.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-
-    results = regex.exec(location.search);
-
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-
-}
-
-	
-$(function() {
-	$('#CT-field').val(CT);
-//	$('#key-field').val(key);
-//    $('#token-field').val(token);
-
-
-})
-//console.log("key: "+ document.getElementById("key-field").value);
-//			console.log("token: "+document.getElementById("token-field").value);
-			console.log("CT: "+document.getElementById("CT-field").value);
+			window.onload = load;
+			function load() {
+				var keyvalue = getUrlVars()["key"];
+				document.getElementById("keyfield").setAttribute('value', keyvalue);
+                alert(document.getElementById("keyfield").value);
+      }
+      function getUrlVars() {
+    	var vars = {};
+    	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    	});
+    	return vars;
+		}
 
 }
 		</script>
