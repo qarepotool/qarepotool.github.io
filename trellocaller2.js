@@ -17,7 +17,7 @@ function getJIRAinfo(){
     CTvalorhidden=document.getElementById('CTfield').value;
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://jira.euipoqaportal.eu/jira/rest/api/2/issue/"+CTvalorhidden, false);
-    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.setRequestHeader("Content-Type", "application/xml;charset=UTF-8");
     xhr.send()
     //console.log(xhr.responseText);
     //console.log(xhr.readyState);
