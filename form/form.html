@@ -36,6 +36,11 @@
 			<input id="element_1" name="element_1" class="element text small" type="text" maxlength="255" value=""/> 
 		</div><p class="guidelines" id="guide_1"><small>ID de la tarea para imputar en Omnia Manager</small></p> 
 		</li>
+		<label class="description" for="element_3">Estimación </label>
+		<div>
+			<input id="element_3" name="element_3" class="element text small" type="text" maxlength="255" value=""/> 
+		</div><p class="guidelines" id="guide_1"><small>Estimación de la tarea</small></p> 
+		</li>
 			
 					<li class="buttons">
 			    <input type="hidden" name="form_id" value="47948" />
@@ -55,18 +60,13 @@
 				var keyvalue = getUrlVars()["key"];
 				var tokenvalue = getUrlVars()["token"];
 				var CTaux = getUrlVars()["CT"];
-				alert("CTaux: " + CTaux);
 				var CTaux1 = decodeURIComponent(CTaux);
-				alert("CTaux1: " + CTaux1);
 				var CTarray= CTaux1.split("/ITDQACT-");
-				alert("CTarray[1]: " + CTarray[1]);
 				var CTvalue="ITDQACT-"+CTarray[1];
 				document.getElementById("keyfield").setAttribute('value', keyvalue);
 				document.getElementById("tokenfield").setAttribute('value', tokenvalue);
 				document.getElementById("CTfield").setAttribute('value', CTvalue);
-				alert(document.getElementById("keyfield").value);
-				alert(document.getElementById("tokenfield").value);
-				alert(document.getElementById("CTfield").value);
+
       }
       function getUrlVars() {
     	var vars = {};
