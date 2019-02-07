@@ -55,8 +55,11 @@
 				var keyvalue = getUrlVars()["key"];
 				var tokenvalue = getUrlVars()["token"];
 				var CTaux = getUrlVars()["CT"];
+				alert("CTaux: " + CTaux);
 				var CTaux1 = decodeURIComponent(CTaux);
+				alert("CTaux1: " + CTaux1);
 				var CTarray= CTaux1.split("/ITDQACT-");
+				alert("CTarray[1]: " + CTarray[1]);
 				var CTvalue="ITDQACT-"+CTarray[1];
 				document.getElementById("keyfield").setAttribute('value', keyvalue);
 				document.getElementById("tokenfield").setAttribute('value', tokenvalue);
