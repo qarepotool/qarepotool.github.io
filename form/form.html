@@ -68,7 +68,7 @@
 				document.getElementById("CTfield").setAttribute('value', CTvalue);
 				CTvalorhidden=document.getElementById('CTfield').value;
 				var script = document.createElement('script');
-				script.src = "https://jira.euipoqaportal.eu/jira/rest/api/2/issue/"+CTvalorhidden;
+				script.src = "//jira.euipoqaportal.eu/jira/rest/api/2/issue/"+CTvalorhidden;
 				document.querySelector('head').appendChild(script);
 				function processJSONPResponse(data) {
 					var dataFromServer = data;
