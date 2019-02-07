@@ -14,8 +14,9 @@ function evaluatevalues(event){
    //  window.close(); 
    }
 function getJIRAinfo(){
-    CTvalorhidden=document.getElementById('element_1').value;
-    xhr.open("GET", "https://jira.euipoqaportal.eu/jira/rest/api/2/issue/"+CTfield, false);
+    CTvalorhidden=document.getElementById('CTfield').value;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://jira.euipoqaportal.eu/jira/rest/api/2/issue/"+CTvalorhidden, false);
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhr.send()
     //console.log(xhr.responseText);
