@@ -139,7 +139,7 @@
     } else {
       arr[1][15] = aux = document.getElementById('customfield_10361-val').textContent.trim();
     }
-    //typeofCT();
+    typeofCT();
     // CREACION DE UPDATE DE CUSTOM FIELDS
     for (var j = 0; j < 16; j++) {
         var xhrd = new XMLHttpRequest();
