@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Detalles de la tarea</title>
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
-<script type="text/javascript" src="../restcaller172.js"></script>
+<script type="text/javascript" src="../restcaller173.js"></script>
 <script type="text/javascript" src="../apptask.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
@@ -62,9 +62,9 @@
 				var appvalueurl = getUrlVars()["appcont"];
 				var appvalhiden=decodeURIComponent(appvalueurl);
 				document.getElementById("appcontrolta").setAttribute('value', appvalhiden);
-			alert("test");
+				console.log("test");
 				for (var i = 0; i < 200; i+=1) {
-					alert(appvalhiden+"-"+apptask[i]);
+					console.log(appvalhiden+"-"+apptask[i]);
 					if (apptask[i]==appvalhiden){
 						document.getElementById("element_1").setAttribute('value', apptask[i].OmniaTask);
 					}
