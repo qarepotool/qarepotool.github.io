@@ -4,7 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Detalles de la tarea</title>
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
-<script type="text/javascript" src="../restcaller167.js"></script>
+<script type="text/javascript" src="../restcaller169.js"></script>
+<script type="text/javascript" src="../apptask.json"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body id="main_body" >
@@ -53,6 +54,16 @@
 		<!--/form-->	
 	</div>
 	<img id="bottom" src="bottom.png" alt="">
+	<script> 
+		{
+			window.onload = load;
+			function load() {
+				var mydata = JSON.parse(apptask);
+                alert(mydata[0].CTname);
+				}
+			}
+
+		</script>
 	</body>
 
 </html>

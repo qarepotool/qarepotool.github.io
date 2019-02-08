@@ -17,15 +17,6 @@
         console.log(this.responseText);
       }
     });
-    //CARGAR JSON CON APP-TAREAS
-    var xhra = new XMLHttpRequest();
-    var data4 = {};
-    xhra.open("GET", "https://cdn.jsdelivr.net/gh/qarepotool/qarepotool.github.io/apptask.json", false);
-    xhra.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    //var json2 = JSON.stringify(data4);
-    xhra.send()
-    var jsonvalue = JSON.parse(xhra.responseText);
-    console.log(xhra.responseText);
     
     //CREACION CARD ID
     var data1 = {};
