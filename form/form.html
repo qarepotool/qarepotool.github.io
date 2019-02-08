@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Detalles de la tarea</title>
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
-<script type="text/javascript" src="../restcaller161.js"></script>
+<script type="text/javascript" src="../restcaller162.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body id="main_body" >
@@ -47,53 +47,12 @@
 				<input type="hidden" name="key" id="keyfield" value=""/>
 				<input type="hidden" name="token" id="tokenfield" value=""/>
 				<input type="hidden" name="CT" id="CTfield" value=""/>
-				<input id="saveForm" class="button_text" name="submit" value="button" type="button" onclick="test()"/>
+				<input id="saveForm" class="button_text" name="submit" value="Aceptar" type="button" onclick="test()"/>
 		</li>
 			</ul>
 		<!--/form-->	
 	</div>
 	<img id="bottom" src="bottom.png" alt="">
-	<script> 
-		{
-			window.onload = load;
-			function load() {
-				var keyvalue = getUrlVars()["key"];
-				var tokenvalue = getUrlVars()["token"];
-				var CTaux = getUrlVars()["CT"];
-				var CTaux1 = decodeURIComponent(CTaux);
-				var CTarray= CTaux1.split("/ITDQACT-");
-				var CTvalue="ITDQACT-"+CTarray[1];
-				document.getElementById("keyfield").setAttribute('value', keyvalue);
-				document.getElementById("tokenfield").setAttribute('value', tokenvalue);
-				document.getElementById("CTfield").setAttribute('value', CTvalue);
-				CTvalorhidden=document.getElementById('CTfield').value;
-				var script = document.createElement('script');
-				script.src = "//jira.euipoqaportal.eu/jira/rest/api/2/issue/"+CTvalorhidden;
-				document.querySelector('head').appendChild(script);
-				function processJSONPResponse(data) {
-					var dataFromServer = data;
-					console.log(dataFromServer);
-				}
-				function getUrlVars() {
-    			var vars = {};
-    			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        		vars[key] = value;
-    			});
-    			return vars;
-				}
-			}
-
-}
-/*function test(){
- var omnia = document.getElementById('element_1').value;
- var tipo = document.getElementById('element_2').textContent;
- var estimacion = document.getElementById('element_3').value;
- alert(omnia);
- alert(tipo);
- alert(estimacion);
- //ventana.close;
-}*/
-		</script>
 	</body>
 
 </html>

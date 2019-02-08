@@ -143,38 +143,36 @@
 
     typeofCT();
 
-    function test(event){
-      arr[1][14] = document.getElementById('element_1').value;
-      var tipo = document.getElementById('element_2').options[document.getElementById("element_2").selectedIndex].text;
-      arr[1][15] = document.getElementById('element_3').value;
-      alert(omnia);
-      alert(tipo);
-      alert(estimacion);
-    }
-
-    // CREACION DE UPDATE DE CUSTOM FIELDS
-    for (var j = 0; j < 16; j++) {
-        var xhrd = new XMLHttpRequest();
-        xhrd.open("PUT", "https://api.trello.com/1/card/" + cardcreated + "/customField/" + arr[0][j] + "/item?token=" + token + "&key=" + key);
-        xhrd.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        if (arr[1][j]== null){
-          arr[1][j]=" ";
-        }
-        var json3 = "{ \"value\": { \"text\": \"" + arr[1][j] + "\" }}";
-        var json4 = "{ \"value\": { \"text\": \"" + " " + "\" }}";
-        try{
-        xhrd.send(json3);
-        }
-        catch
-        {
-        xhrd.send(json4);  
-        }
-    }
-
     //console.log(json3);
   };
 }).call(this);
 
+function test(event){
+  arr[1][14] = document.getElementById('element_1').value;
+  var tipo = document.getElementById('element_2').options[document.getElementById("element_2").selectedIndex].text;
+  arr[1][15] = document.getElementById('element_3').value;
+  alert(omnia);
+  alert(tipo);
+  alert(estimacion);
+  // CREACION DE UPDATE DE CUSTOM FIELDS
+  for (var j = 0; j < 16; j++) {
+    var xhrd = new XMLHttpRequest();
+    xhrd.open("PUT", "https://api.trello.com/1/card/" + cardcreated + "/customField/" + arr[0][j] + "/item?token=" + token + "&key=" + key);
+    xhrd.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    if (arr[1][j]== null){
+      arr[1][j]=" ";
+    }
+    var json3 = "{ \"value\": { \"text\": \"" + arr[1][j] + "\" }}";
+    var json4 = "{ \"value\": { \"text\": \"" + " " + "\" }}";
+    try{
+    xhrd.send(json3);
+    }
+    catch
+    {
+    xhrd.send(json4);  
+    }
+}
+}
 
 function Create2DArray(rows) {
   var arr = [];
@@ -215,8 +213,6 @@ function typeofCT() {
   let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
   width=350,height=400,left=100,top=100`;
   ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params);
-  //test(document.getElementById('saveForm').onclick);
- //document.getElementById('saveForm').onclick=test() ;
 }
 
 function test(event){
