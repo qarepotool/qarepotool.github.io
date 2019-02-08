@@ -222,9 +222,9 @@ function typeofCT() {
 }
 
 function test(event){
-  var omnia = document.getElementById('element_1').value;
+  var omnia = document.getElementById('element_1').textContent;
   var tipo = document.getElementById('element_2').textContent;
-  var estimacion = document.getElementById('element_3').value;
+  var estimacion = document.getElementById('element_3').textContent;
   alert(omnia);
   alert(tipo);
   alert(estimacion);
