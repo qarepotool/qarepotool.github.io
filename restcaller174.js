@@ -213,7 +213,7 @@ function typeofCT(arr, cardcreated) {
   var e;
   let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
   width=350,height=400,left=100,top=100`;
-  appencoded=encodeURIComponent(arr[1][1]);
+  appencoded=btoa(arr[1][1]);
   ventana=window.open("https://qarepotool.github.io/form/form.html?appcont="+appencoded, "Datos propios", params);
 }
 
