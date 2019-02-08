@@ -9,7 +9,7 @@
     document.body.appendChild(e);
   }
 
-  window.saveTrelloCard = function (idList, key, token) {
+  window.saveTrelloCard = function (omnia, key, token) {
     var data = null;
     var xhr = new XMLHttpRequest();
     xhr.addEventListener("readystatechange", function () {
@@ -28,13 +28,9 @@
     data1.idList = "5b61b58259e21d8a1c18a247";
     var json2 = JSON.stringify(data1);
     xhr.send(json2)
-    //console.log(xhr.responseText);
-    //console.log(xhr.readyState);
-    //console.log(xhr.status);
     var jsonvalue = JSON.parse(xhr.responseText);
     var cardcreated = jsonvalue['id'];
-    var jsonvalue = JSON.parse(xhr.responseText);
-    var cardcreated = jsonvalue['id'];
+    
     Addlabeltocard(1,cardcreated,key,token);
     
     // CREACION DE ARRAY DE CUSTOM FIELDS
@@ -56,87 +52,107 @@
     arr[0][13] = "5c532003aec9b0223db3dd6d";
     arr[0][14] = "5c53200fc348ab7ac13488bb";
     arr[0][15] = "5c532017aa78c45fabead47e";
+    //CAPTURA DEL CAMPO "KEY" DE LA CONTROL TABLE
     if (document.getElementById('key-val') == null) {
       console.log("Este campo es null " + arr[1][0]);
     } else {
       arr[1][0] = document.getElementById('key-val').textContent.trim();
     }
+    //CAPTURA DEL CAMPO "APPLICATION" DE LA CONTROL TABLE
     if (document.getElementById('customfield_10476-val') == null) {
       console.log("Este campo es null " + arr[1][1]);
     } else {
       arr[1][1] = document.getElementById('customfield_10476-val').textContent.trim();
     }
+    //CAPTURA DEL CAMPO "VERSION" DE LA CONTROL TABLE
     if (document.getElementById('customfield_10361-val') == null) {
       console.log("Este campo es null " + arr[1][2]);
     } else {
       arr[1][2] = document.getElementById('customfield_10361-val').textContent.trim();
     }
+    //CAPTURA DEL CAMPO "RC" DE LA CONTROL TABLE
     if (document.getElementById('customfield_10363-val') == null) {
       console.log("Este campo es null " + arr[1][3]);
     } else {
       arr[1][3] = document.getElementById('customfield_10363-val').textContent.trim();
     }
+    //CAPTURA DEL CAMPO "CLARITY" DE LA CONTROL TABLE
     if (document.getElementById('customfield_10806-val') == null) {
       console.log("Este campo es null " + arr[1][4]);
     } else {
       arr[1][4] = document.getElementById('customfield_10806-val').textContent.trim();
     }
+    //CAPTURA DEL CAMPO "BUSINESS" DE LA CONTROL TABLE
     if (document.getElementById('customfield_11408-val') == null) {
       console.log("Este campo es null " + arr[1][5]);
     } else {
       arr[1][5] = document.getElementById('customfield_11408-val').textContent.trim();
     }
+    //CAPTURA DEL CAMPO "TYPE" DE LA CONTROL TABLE
     if (document.getElementById('type-val') == null) {
       console.log("Este campo es null " + arr[1][6]);
     } else {
       arr[1][6] = document.getElementById('type-val').textContent.trim();
     }
+    //CAPTURA DEL CAMPO "STATUS" DE LA CONTROL TABLE
     if (document.getElementById('status-val') == null) {
       console.log("Este campo es null " + arr[1][7]);
     } else {
       arr[1][7] = document.getElementById('status-val').textContent.trim();
     }
+    //CAPTURA DEL CAMPO "PM" DE LA CONTROL TABLE
     if (document.getElementById('customfield_10373-val') == null) {
       console.log("Este campo es null " + arr[1][8]);
     } else {
       arr[1][8] = document.getElementById('customfield_10373-val').textContent.trim();
     }
+    //CAPTURA DEL CAMPO "PLANNED DELIVERY DATE TO QA" DE LA CONTROL TABLE
     if (document.getElementById('customfield_10376-val') == null) {
       console.log("Este campo es null " + arr[1][9]);
     } else {
       arr[1][9] = document.getElementById('customfield_10376-val').textContent.trim();
     }
+    //CAPTURA DEL CAMPO "PLANNED UAT" DE LA CONTROL TABLE
     if (document.getElementById('customfield_10377-val') == null) {
       console.log("Este campo es null " + arr[1][10]);
     } else {
       arr[1][10] = document.getElementById('customfield_10377-val').textContent.trim();
     }
+    //CAPTURA DEL CAMPO "PLANNED GO LIVE" DE LA CONTROL TABLE
     if (document.getElementById('customfield_10366-val') == null) {
       console.log("Este campo es null " + arr[1][11]);
     } else {
       arr[1][11] = document.getElementById('customfield_10366-val').textContent.trim();
       Addduetocard(arr[1][11],cardcreated,key,token);
     }
+    //CAPTURA DEL CAMPO "DESCRIPTION" DE LA CONTROL TABLE
     if (document.getElementById('description-val') == null) {
       console.log("Este campo es null " + arr[1][12]);
     } else {
       arr[1][12] = document.getElementById('description-val').textContent.trim();
     }
+    //CAPTURA DEL CAMPO "DELIVERY FOLDER" DE LA CONTROL TABLE
     if (document.getElementById('customfield_10392-val') == null) {
       console.log("Este campo es null " + arr[1][13]);
     } else {
     //  arr[1][13] = document.getElementById('customfield_10392-val').textContent;
     }
+    //CAPTURA DEL CAMPO "TAREA PARA IMPUTAR" DE LA CONTROL TABLE
     if (document.getElementById('customfield_10361-val') == null) {
       console.log("Este campo es null " + arr[1][14]);
     } else {
       arr[1][14] = document.getElementById('customfield_10361-val').textContent.trim();
     }
+    //CAPTURA DEL CAMPO "ESTIMACION" DE LA CONTROL TABLE
     if (document.getElementById('customfield_10361-val') == null) {
       console.log("Este campo es null " + arr[1][15]);
     } else {
       arr[1][15] = aux = document.getElementById('customfield_10361-val').textContent.trim();
     }
+    //CONSULTA DE TAREA EN OMNIA RELACIONADA CON LA APLICACIÓN DE CONTROL TABLE
+
+
+
     typeofCT();
     // CREACION DE UPDATE DE CUSTOM FIELDS
     for (var j = 0; j < 16; j++) {
