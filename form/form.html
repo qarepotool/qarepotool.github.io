@@ -62,7 +62,9 @@
 				var appvalueurl = getUrlVars()["appcont"];
 				var appvalhiden=decodeURIComponent(appvalueurl);
 				document.getElementById("appcontrolta").setAttribute('value', appvalhiden);
+			
 				for (var i = 0; i < apptask.length; i+=1) {
+					alert(appvalhiden+"-"+apptask[i]);
 					if (apptask[i]==appvalhiden){
 						document.getElementById("element_1").setAttribute('value', apptask[i].OmniaTask);
 					}
