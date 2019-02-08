@@ -213,13 +213,15 @@ function typeofCT() {
   var e;
   let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
   width=350,height=400,left=100,top=100`;
-  ventana=window.open("https://qarepotool.github.io/form/form.html", "Datos propios", params);
+  appencoded=encodeURI(arr[1][1]);
+  ventana=window.open("https://qarepotool.github.io/form/form.html?appcont="+appencoded, "Datos propios", params);
 }
 
 function test(event){
   var omnia = document.getElementById('element_1').value;
   var tipo = document.getElementById('element_2').options[document.getElementById("element_2").selectedIndex].text;
   var estimacion = document.getElementById('element_3').value;
+  var application1 = document.getElementById('appcontrolta').value;
   alert(omnia);
   alert(tipo);
   alert(estimacion);
