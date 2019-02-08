@@ -141,13 +141,13 @@
 
 
 
-    typeofCT();
+    typeofCT(arr, cardcreated);
 
     //console.log(json3);
   };
 }).call(this);
 
-function test(event){
+function test(arr,cardcreated){
   arr[1][14] = document.getElementById('element_1').value;
   var tipo = document.getElementById('element_2').options[document.getElementById("element_2").selectedIndex].text;
   arr[1][15] = document.getElementById('element_3').value;
