@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Detalles de la tarea</title>
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
-<script type="text/javascript" src="../restcaller174.js"></script>
+<script type="text/javascript" src="../restcaller175.js"></script>
 <script type="text/javascript" src="../apptask.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
@@ -24,7 +24,7 @@
 					<li id="li_2" >
 		<label class="description" for="element_2">Tipo de Entrega </label>
 		<div>
-		<select class="element select medium" id="element_2" name="element_2"> 
+		<select class="element select medium" id="element_2" name="element_2" size="37"> 
 			<option value="" selected="selected"></option>
 <option value="1" >Correctivo</option>
 <option value="2" >Adaptivo</option>
@@ -34,13 +34,13 @@
 		</li>		<li id="li_1" >
 		<label class="description" for="element_1">Tarea Omnia Manager </label>
 		<div>
-			<input id="element_1" name="element_1" class="element text small" type="text" maxlength="455" value=""/> 
+			<input id="element_1" name="element_1" class="element text small" type="text" maxlength="455" value="" size="37"/> 
 		</div><p class="guidelines" id="guide_1"><small>ID de la tarea para imputar en Omnia Manager</small></p> 
 		</li>
 		<label class="description" for="element_3">Estimación </label>
 		<div>
 			<input id="element_3" name="element_3" class="element text small" type="text" maxlength="255" value=""/> 
-		</div><p class="guidelines" id="guide_1"><small>Estimación de la tarea</small></p> 
+		</div><p class="guidelines" id="guide_1"><small>Estimación de la tarea en mandays</small></p> 
 		</li>
 			
 					<li class="buttons">
@@ -49,6 +49,7 @@
 				<input type="hidden" name="token" id="tokenfield" value=""/>
 				<input type="hidden" name="CT" id="CTfield" value=""/>
 				<input type="hidden" name="appcontrolta" id="appcontrolta" value=""/>
+				<input type="hidden" name="vercontrolta" id="vercontrolta" value=""/>
 				<input id="saveForm" class="button_text" name="submit" value="Aceptar" type="button" onclick="test()"/>
 		</li>
 			</ul>
@@ -62,7 +63,19 @@
 				var appvalueurl = getUrlVars()["appcont"];
 				var appvalhiden=atob(appvalueurl);
 				document.getElementById("appcontrolta").setAttribute('value', appvalhiden);
-				console.log("test");
+				var vervalueurl = getUrlVars()["verscoded"];
+				var vervalhiden=atob(vervalueurl);
+				document.getElementById("vercontrolta").setAttribute('value', vervalhiden);
+				
+				lastchar=vervalhiden.slice(-1);
+				console.log(lastchar);
+				if (lastchar=="0"){
+					document.getElementById('element_2').options[2].selected = true;
+					}
+				else{
+					document.getElementById('element_2').options[1].selected = true;
+					}
+
 				for (var i = 0; i < 200; i+=1) {
 					console.log(appvalhiden+"-"+apptask[i].CTname);
 					if (apptask[i].CTname==appvalhiden){

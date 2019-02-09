@@ -32,7 +32,7 @@
     var jsonvalue = JSON.parse(xhr.responseText);
     var cardcreated = jsonvalue['id'];
     
-    Addlabeltocard(1,cardcreated,key,token);
+    
     
     // CREACION DE ARRAY DE CUSTOM FIELDS
     var arr = Create2DArray(16);
@@ -152,9 +152,15 @@ function test(arr,cardcreated){
   arr[1][14] = document.getElementById('element_1').value;
   var tipo = document.getElementById('element_2').options[document.getElementById("element_2").selectedIndex].text;
   arr[1][15] = document.getElementById('element_3').value;
-  alert(omnia);
-  alert(tipo);
-  alert(estimacion);
+  alert("larga"+omnia);
+  alert("larga"+tipo);
+  alert("larga"+estimacion);
+  if (tipo="Correctivo"){
+  Addlabeltocard(1,cardcreated,key,token);
+  }
+  else{
+    Addlabeltocard(0,cardcreated,key,token);
+  }
   // CREACION DE UPDATE DE CUSTOM FIELDS
   for (var j = 0; j < 16; j++) {
     var xhrd = new XMLHttpRequest();
@@ -214,7 +220,8 @@ function typeofCT(arr, cardcreated) {
   let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
   width=350,height=400,left=100,top=100`;
   appencoded=btoa(arr[1][1]);
-  ventana=window.open("https://qarepotool.github.io/form/form.html?appcont="+appencoded, "Datos propios", params);
+  verscoded=btoa(arr[1][2]);
+  ventana=window.open("https://qarepotool.github.io/form/form.html?appcont="+appencoded+"&version="+verscoded, "Datos propios", params);
 }
 
 function test(event){
