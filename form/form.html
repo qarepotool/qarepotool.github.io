@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Detalles de la tarea</title>
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
-<script type="text/javascript" src="../restcaller179.js"></script>
+<script type="text/javascript" src="../restcaller180.js"></script>
 <script type="text/javascript" src="../apptask.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
@@ -61,6 +61,12 @@
 		{
 			window.onload = load;
 			function load() {
+  				var keyvalor = getUrlVars()["key"];
+				var tokenvalor = getUrlVars()["token"];
+				var cardvalor = getUrlVars()["cardcreated"];
+				document.getElementById("keyfield").setAttribute('value', keyvalor);
+				document.getElementById("tokenfield").setAttribute('value', tokenvalor);
+  				document.getElementById("cardcreated").setAttribute('cardcreated', cardvalor);
 				var appvalueurl = getUrlVars()["appcont"];
 				var appvalhiden=atob(appvalueurl);
 				document.getElementById("appcontrolta").setAttribute('value', appvalhiden);
@@ -69,7 +75,7 @@
 				document.getElementById("vercontrolta").setAttribute('value', vervalhiden);
 				
 				lastchar=vervalhiden.slice(-1);
-				console.log(lastchar);
+				//console.log(lastchar);
 				if (lastchar=="0"){
 					document.getElementById('element_2').options[2].selected = true;
 					}
@@ -78,7 +84,7 @@
 					}
 
 				for (var i = 0; i < Object.keys(apptask).length; i+=1) {
-					console.log(appvalhiden+"-"+apptask[i].CTname);
+					//console.log(appvalhiden+"-"+apptask[i].CTname);
 					if (apptask[i].CTname==appvalhiden){
 						document.getElementById("element_1").setAttribute('value', apptask[i].OmniaTask);
 					}

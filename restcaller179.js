@@ -158,7 +158,7 @@
 }
 
 
-    typeofCT(arr, cardcreated);
+    typeofCT(arr, cardcreated,key,token);
 
     //console.log(json3);
   };
@@ -214,16 +214,14 @@ function Addduetocard(date,idcard,key,token){
   xhrg.send();
 }
 
-function typeofCT(arr, cardcreated) {
+function typeofCT(arr, cardcreated,key,token) {
   var e;
   let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
   width=350,height=400,left=100,top=100`;
   appencoded=btoa(arr[1][1]);
   verscoded=btoa(arr[1][2]);
-  ventana=window.open("https://qarepotool.github.io/form/form.html?appcont="+appencoded+"&version="+verscoded, "Datos propios", params);
-  ventana.getElementById("keyfield").setAttribute('value', key);
-  ventana.getElementById("tokenfield").setAttribute('value', token);
-  ventana.getElementById("cardcreated").setAttribute('cardcreated', cardcreated);
+  ventana=window.open("https://qarepotool.github.io/form/form.html?appcont="+appencoded+"&version="+verscoded+"&key=" +key +"&token="+ token+"&cardcreated="+cardcreated, "Datos propios", params);
+
 }
 
 function test(event){
