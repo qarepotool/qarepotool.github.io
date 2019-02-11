@@ -227,7 +227,7 @@ function typeofCT(arr, cardcreated,key,token) {
 
 function test(event){
   var omnia = document.getElementById('element_1').value;
-  var tipo = document.getElementById('element_2').options[document.getElementById("element_2").selectedIndex].text;
+  var tipo = document.getElementById('element_2').options[document.getElementById("element_2").selectedIndex];
   var estimacion = document.getElementById('element_3').value;
   var cardcreated = document.getElementById('cardcreated').value;
   var key = document.getElementById('keyfield').value;
@@ -240,7 +240,7 @@ function test(event){
   console.log("cardcreated: "+cardcreated);
   console.log("key: "+key);
   console.log("token: "+token);
-  if (tipo="Correctivo"){
+  if (tipo=1){
   Addlabeltocard(1,cardcreated,key,token);
   }
   else{
