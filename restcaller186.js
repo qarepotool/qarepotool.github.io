@@ -166,13 +166,13 @@
 
 function test(arr,cardcreated){
   arr[1][14] = document.getElementById('element_1').value;
-  var tipo = document.getElementById('element_2').options[document.getElementById("element_2").selectedIndex].value;
+  var tipo = document.getElementById("element_2").selectedIndex;
   console.log(tipo);
   arr[1][15] = document.getElementById('element_3').value;
   alert("larga"+omnia);
   alert("larga"+tipo);
   alert("larga"+estimacion);
-  if (tipo="Correctivo"){
+  if (tipo=1){
     Addlabeltocard("1",cardcreated,key,token);
   }
   else{
