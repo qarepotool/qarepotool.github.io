@@ -166,7 +166,7 @@
 
 function test(arr,cardcreated){
   arr[1][14] = document.getElementById('element_1').value;
-  var tipo = document.getElementById('element_2').options[document.getElementById("element_2").selectedIndex].text;
+  var tipo = document.getElementById('element_2').options[document.getElementById("element_2").selectedIndex].value;
   console.log(tipo);
   arr[1][15] = document.getElementById('element_3').value;
   alert("larga"+omnia);
@@ -189,10 +189,12 @@ function Create2DArray(rows) {
   return arr;
 }
 function Addlabeltocard(type,idcard,key,token){
-  if (type=1){
+  if (type==1){
+    console.log(type);
    var idlabel="5b9f7530ace30b27fdfff84b";
   }
   else{
+    console.log(type);
    var idlabel="5c58c5b30f74206283678232";
   }
   var data2 = {};
