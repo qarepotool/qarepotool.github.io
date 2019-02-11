@@ -31,9 +31,7 @@
     xhr.send(json2)
     var jsonvalue = JSON.parse(xhr.responseText);
     var cardcreated = jsonvalue['id'];
-    document.getElementById("keyfield").setAttribute('value', key);
-    document.getElementById("tokenfield").setAttribute('value', token);
-    document.getElementById("cardcreated").setAttribute('cardcreated', cardcreated);
+
     
     
     // CREACION DE ARRAY DE CUSTOM FIELDS
@@ -53,8 +51,7 @@
     arr[0][11] = "5c531fefca401d11028fdda9";
     arr[0][12] = "5c531ffbba9fe524639af46b";
     arr[0][13] = "5c532003aec9b0223db3dd6d";
-    arr[0][14] = "5c53200fc348ab7ac13488bb";
-    arr[0][15] = "5c532017aa78c45fabead47e";
+
     //CAPTURA DEL CAMPO "KEY" DE LA CONTROL TABLE
     if (document.getElementById('key-val') == null) {
       console.log("Este campo es null " + arr[1][0]);
@@ -224,6 +221,9 @@ function typeofCT(arr, cardcreated) {
   appencoded=btoa(arr[1][1]);
   verscoded=btoa(arr[1][2]);
   ventana=window.open("https://qarepotool.github.io/form/form.html?appcont="+appencoded+"&version="+verscoded, "Datos propios", params);
+  document.getElementById("keyfield").setAttribute('value', key);
+  document.getElementById("tokenfield").setAttribute('value', token);
+  document.getElementById("cardcreated").setAttribute('cardcreated', cardcreated);
 }
 
 function test(event){
@@ -251,7 +251,12 @@ function test(event){
     Addlabeltocard(0,cardcreated,key,token);
   }
   // CREACION DE UPDATE DE CUSTOM FIELDS
-  for (var j = 13; j < 16; j++) {
+  var arr = Create2DArray(2);
+  arr[0][0] = "5c53200fc348ab7ac13488bb";
+  arr[0][1] = "5c532017aa78c45fabead47e";
+  arr[1][0] =omnia;
+  arr[1][1] =estimacion;
+  for (var j = 0; j < 2; j++) {
     var xhrd = new XMLHttpRequest();
     xhrd.open("PUT", "https://api.trello.com/1/card/" + cardcreated + "/customField/" + arr[0][j] + "/item?token=" + token + "&key=" + key);
     xhrd.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
