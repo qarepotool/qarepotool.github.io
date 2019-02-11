@@ -173,10 +173,10 @@ function test(arr,cardcreated){
   alert("larga"+tipo);
   alert("larga"+estimacion);
   if (tipo="Correctivo"){
-    Addlabeltocard(1,cardcreated,key,token);
+    Addlabeltocard("1",cardcreated,key,token);
   }
   else{
-    Addlabeltocard(0,cardcreated,key,token);
+    Addlabeltocard("0",cardcreated,key,token);
   }
 
 }
@@ -189,7 +189,7 @@ function Create2DArray(rows) {
   return arr;
 }
 function Addlabeltocard(type,idcard,key,token){
-  if (type==1){
+  if (type=1){
    var idlabel="5b9f7530ace30b27fdfff84b";
   }
   else{
