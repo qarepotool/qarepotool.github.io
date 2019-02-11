@@ -221,9 +221,9 @@ function typeofCT(arr, cardcreated) {
   appencoded=btoa(arr[1][1]);
   verscoded=btoa(arr[1][2]);
   ventana=window.open("https://qarepotool.github.io/form/form.html?appcont="+appencoded+"&version="+verscoded, "Datos propios", params);
-  document.getElementById("keyfield").setAttribute('value', key);
-  document.getElementById("tokenfield").setAttribute('value', token);
-  document.getElementById("cardcreated").setAttribute('cardcreated', cardcreated);
+  ventana.getElementById("keyfield").setAttribute('value', key);
+  ventana.getElementById("tokenfield").setAttribute('value', token);
+  ventana.getElementById("cardcreated").setAttribute('cardcreated', cardcreated);
 }
 
 function test(event){
@@ -235,9 +235,6 @@ function test(event){
   var token = document.getElementById('tokenfield').value;
   var application1 = document.getElementById('appcontrolta').value;
 
-  arr[1][14] = document.getElementById('element_1').value;
-  var tipo = document.getElementById('element_2').options[document.getElementById("element_2").selectedIndex].text;
-  arr[1][15] = document.getElementById('element_3').value;
   console.log("tipo: "+tipo);
   console.log("omnia: "+omnia);
   console.log("estimacion: "+estimacion);
