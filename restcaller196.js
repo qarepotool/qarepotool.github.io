@@ -227,17 +227,19 @@ function test(event){
   var token = document.getElementById('tokenfield').value;
   var application1 = document.getElementById('appcontrolta').value;
 
-  console.log("tipo: "+tipo);
+  console.log("tipovalue: "+tipo.value);
+  console.log("tipotext: "+tipo.text);
+  console.log("tipotext: "+tipo);
   console.log("omnia: "+omnia);
   console.log("estimacion: "+estimacion);
   console.log("cardcreated: "+cardcreated);
   console.log("key: "+key);
   console.log("token: "+token);
   if (tipo.value==1){
-    Addlabeltocard(1,cardcreated,key,token);
+    Addlabeltocard("1",cardcreated,key,token);
   }
   else{
-    Addlabeltocard(0,cardcreated,key,token);
+    Addlabeltocard("0",cardcreated,key,token);
   }
   // CREACION DE UPDATE DE CUSTOM FIELDS
   var arr = Create2DArray(2);
