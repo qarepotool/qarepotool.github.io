@@ -137,7 +137,7 @@
     } else {
       var auxURL = JSON.stringify(document.getElementById('customfield_10392-val').textContent.trim());
       alert(auxURL);
-      arr[1][13] = encodeURI(auxURL);
+      arr[1][13] = auxURL;
     }
   // CREACION DE UPDATE DE CUSTOM FIELDS
   for (var j = 0; j < 14; j++) {
