@@ -135,7 +135,8 @@
     if (document.getElementById('customfield_10392-val') == null) {
       console.log("Este campo es null " + arr[1][13]);
     } else {
-      var auxURL = document.getElementById('customfield_10392-val').textContent;
+      var auxURL = JSON.stringify(document.getElementById('customfield_10392-val').textContent);
+      alert(auxURL);
       arr[1][13] = encodeURI(auxURL);
     }
   // CREACION DE UPDATE DE CUSTOM FIELDS
