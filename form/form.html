@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Detalles de la tarea</title>
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
-<script type="text/javascript" src="../restcaller192.js"></script>
+<script type="text/javascript" src="../restcaller193.js"></script>
 <script type="text/javascript" src="../apptask.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
@@ -59,6 +59,15 @@
 	<img id="bottom" src="bottom.png" alt="">
 	<script> 
 		{
+			window.onchange= change;
+			function change(){
+				if (document.getElementById('element_2').options[2].selected == false){
+					updatetask();
+				}
+				else{
+					document.getElementById("element_1").setAttribute('value', " ");
+				}
+			}
 			window.onload = load;
 			function load() {
   				var keyvalor = getUrlVars()["key"];
@@ -81,9 +90,11 @@
 					}
 				else{
 					document.getElementById('element_2').options[1].selected = true;
+					updatetask();
 					}
-
-				for (var i = 0; i < Object.keys(apptask).length; i+=1) {
+				}
+				function updatetask() {
+					for (var i = 0; i < Object.keys(apptask).length; i+=1) {
 					//console.log(appvalhiden+"-"+apptask[i].CTname);
 					if (apptask[i].CTname==appvalhiden){
 						document.getElementById("element_1").setAttribute('value', apptask[i].OmniaTask);
