@@ -227,15 +227,14 @@ function test(event){
   var token = document.getElementById('tokenfield').value;
   var application1 = document.getElementById('appcontrolta').value;
 
-  console.log("tipovalue: "+tipo.value);
-  console.log("tipotext: "+tipo.text);
+
   console.log("tipotext: "+tipo);
   console.log("omnia: "+omnia);
   console.log("estimacion: "+estimacion);
   console.log("cardcreated: "+cardcreated);
   console.log("key: "+key);
   console.log("token: "+token);
-  if (tipo.value==1){
+  if (tipo==1){
     Addlabeltocard("1",cardcreated,key,token);
   }
   else{
