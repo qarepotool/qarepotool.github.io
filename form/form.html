@@ -94,6 +94,9 @@
 				}
 				}
 				function updatetask() {
+					var appvalueurl = getUrlVars()["appcont"];
+					var appvalhiden=atob(appvalueurl);
+					document.getElementById("appcontrolta").setAttribute('value', appvalhiden);
 					for (var i = 0; i < Object.keys(apptask).length; i+=1) {
 					//console.log(appvalhiden+"-"+apptask[i].CTname);
 					if (apptask[i].CTname==appvalhiden){
