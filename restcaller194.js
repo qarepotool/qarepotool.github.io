@@ -144,7 +144,7 @@
                                       .replace(/\\t/g, "\\t")
                                       .replace(/\\b/g, "\\b")
                                       .replace(/\\f/g, "\\f");
-      alert(myEscapedauxURL);
+      alert("scaped string" + myEscapedauxURL);
       arr[1][13] = myEscapedauxURL;
     }
   // CREACION DE UPDATE DE CUSTOM FIELDS
@@ -208,7 +208,7 @@ function Addlabeltocard(type,idcard,key,token){
   }
   var data2 = {};
   var xhrf = new XMLHttpRequest();
-  xhrf.open("POST", "https://api.trello.com/1/cards/"+idcard+"/idLabels", false);
+  xhrf.open("POST", "https://api.trello.com/1/cards/"+idcard+"/idLabels");
   xhrf.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   data2.key = key;
   data2.token = token;
@@ -251,7 +251,7 @@ function test(event){
   console.log("cardcreated: "+cardcreated);
   console.log("key: "+key);
   console.log("token: "+token);
-  if (tipo=1){
+  if (tipo.value==1){
     Addlabeltocard(1,cardcreated,key,token);
   }
   else{
