@@ -136,15 +136,8 @@
       console.log("Este campo es null " + arr[1][13]);
     } else {
       var auxURL = document.getElementById('customfield_10392-val').textContent.trim();
-      var myEscapedauxURL = auxURL.replace(/\\n/g, "\\n")
-                                      .replace(/\\'/g, "\\'")
-                                      .replace(/\\"/g, '\\"')
-                                      .replace(/\\&/g, "\\&")
-                                      .replace(/\\r/g, "\\r")
-                                      .replace(/\\t/g, "\\t")
-                                      .replace(/\\b/g, "\\b")
-                                      .replace(/\\f/g, "\\f");
-      alert("scaped string" + myEscapedauxURL);
+      var myEscapedauxURL = encodeURIComponent(auxURL);
+      alert("scaped string: " + myEscapedauxURL);
       arr[1][13] = myEscapedauxURL;
     }
   // CREACION DE UPDATE DE CUSTOM FIELDS
