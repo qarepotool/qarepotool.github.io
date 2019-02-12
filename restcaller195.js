@@ -198,7 +198,6 @@ function Create2DArray(rows) {
   return arr;
 }
 
-}
 function Addduetocard(date,idcard,key,token){
   var data3 = {};
   var xhrg = new XMLHttpRequest();
