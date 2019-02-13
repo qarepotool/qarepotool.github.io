@@ -137,7 +137,7 @@
     } else {
       var auxURL = document.getElementById('customfield_10392-val').textContent.trim();
       var myEscapedauxURL = encodeURIComponent(auxURL);
-      alert("scaped string: " + myEscapedauxURL);
+      //alert("scaped string: " + myEscapedauxURL);
       arr[1][13] = myEscapedauxURL;
     }
   // CREACION DE UPDATE DE CUSTOM FIELDS
