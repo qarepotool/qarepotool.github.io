@@ -136,7 +136,8 @@
       console.log("Este campo es null " + arr[1][13]);
     } else {
       var auxURL = document.getElementById('customfield_10392-val').textContent.trim();
-      var myEscapedauxURL = encodeURIComponent(auxURL);
+      var myEscapedauxURL = encodeURI(auxURL);
+      alert (myEscapedauxURL);
       //alert("scaped string: " + myEscapedauxURL);
       arr[1][13] = myEscapedauxURL;
     }
