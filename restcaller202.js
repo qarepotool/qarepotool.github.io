@@ -285,4 +285,4 @@ function Addlabeltocard(tipo,idcard,key,token){
   data2.value = idlabel;
   var json2 = JSON.stringify(data2);
   xhrf.send(json2);}
-}
+
