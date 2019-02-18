@@ -25,6 +25,10 @@
     data1.key = key;
     data1.token = token;
     data1.name = document.title;
+    if document.title.indexOf("ITDQACT") !== -1{
+        alert("No se puede crear un card si no se trata de una Control Table")
+    }
+    }
     data1.desc = document.location.href;
     data1.idList = "5b61b58259e21d8a1c18a247";
     var json2 = JSON.stringify(data1);
