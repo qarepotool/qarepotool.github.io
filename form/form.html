@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Detalles de la tarea</title>
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
-<script type="text/javascript" src="../restcaller204.js"></script>
+<script type="text/javascript" src="../restcaller205.js"></script>
 <script type="text/javascript" src="../apptask.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
@@ -58,7 +58,7 @@
 		<!--/form-->	
 	</div>
 	<img id="bottom" src="bottom.png" alt="">
-	<script type=text/javascript >{
+	<script>{
 
 			window.onload = load;
 			function load() {
@@ -99,7 +99,7 @@
 					var appvalueurl = getUrlVars()["appcont"];
 					var appvalhiden=atob(appvalueurl);
 					document.getElementById("appcontrolta").setAttribute('value', appvalhiden);
-					for (var i = 0; i &amp;lt; Object.keys(apptask).length; i+=1) {
+					for (var i = 0; i < Object.keys(apptask).length; i+=1) {
 					//console.log(appvalhiden+"-"+apptask[i].CTname);
 					if (apptask[i].CTname==appvalhiden){
 						document.getElementById("element_1").setAttribute('value', apptask[i].OmniaTask);
@@ -107,7 +107,7 @@
 				}}
 				function getUrlVars() {
     			var vars = {};
-    			var parts = window.location.href.replace(/[?&amp;]+([^=&amp;]+)=([^&amp;]*)/gi, function(m,key,value) {
+    			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
         		vars[key] = value;
     			});
     			return vars;
