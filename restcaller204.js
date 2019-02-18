@@ -263,7 +263,7 @@ function test(event){
     OpenCard(shotvaltocard,key,token);
 function OpenCard(shotvaltocard,key,token) {
   var e;
-  let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no;
+  let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`;
   ventana=window.open("https://trello.com/c/"+ shotvaltocard, params);
 
 }
@@ -284,5 +284,6 @@ function Addlabeltocard(tipo,idcard,key,token){
   data2.token = token;
   data2.value = idlabel;
   var json2 = JSON.stringify(data2);
-  xhrf.send(json2);}}
+  xhrf.send(json2);}
+  }
 
