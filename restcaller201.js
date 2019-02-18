@@ -31,6 +31,7 @@
     xhr.send(json2)
     var jsonvalue = JSON.parse(xhr.responseText);
     var cardcreated = jsonvalue['id'];
+    var shortlink = jsonvalue['shortLink'];
 
     
     
@@ -137,7 +138,7 @@
     } else {
       var auxURL = document.getElementById('customfield_10392-val').textContent.trim();
       var myEscapedauxURL = encodeURI(auxURL);
-      alert (myEscapedauxURL);
+      //alert (myEscapedauxURL);
       //alert("scaped string: " + myEscapedauxURL);
       arr[1][13] = myEscapedauxURL;
     }
@@ -161,7 +162,7 @@
 }
 
 
-    typeofCT(arr, cardcreated,key,token);
+    typeofCT(arr, cardcreated,shortlink,key,token);
 
     //console.log(json3);
   };
@@ -202,13 +203,13 @@ function Addduetocard(date,idcard,key,token){
   xhrg.send();
 }
 
-function typeofCT(arr, cardcreated,key,token) {
+function typeofCT(arr, cardcreated,shortlink,key,token) {
   var e;
   let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
   width=350,height=400,left=100,top=100`;
   appencoded=btoa(arr[1][1]);
   verscoded=btoa(arr[1][2]);
-  ventana=window.open("https://qarepotool.github.io/form/form.html?appcont="+appencoded+"&version="+verscoded+"&key=" +key +"&token="+ token+"&cardcreated="+cardcreated, "Datos propios", params);
+  ventana=window.open("https://qarepotool.github.io/form/form.html?appcont="+appencoded+"&version="+verscoded+"&key=" +key +"&token="+ token+"&cardcreated="+cardcreated+"&short="+shortlink, "Datos propios", params);
 
 }
 
@@ -219,6 +220,7 @@ function test(event){
   var cardcreated = document.getElementById('cardcreated').value;
   var key = document.getElementById('keyfield').value;
   var token = document.getElementById('tokenfield').value;
+  var shotvaltocard = document.getElementById("shortfield").value
   var application1 = document.getElementById('appcontrolta').value;
 
 
@@ -256,6 +258,14 @@ function test(event){
     {
     xhrd.send(json4);  
     }
+}
+    document.close();
+    OpenCard(shotvaltocard,key,token);
+function OpenCard(shotvaltocard,key,token) {
+  var e;
+  let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no;
+  ventana=window.open("https://trello.com/c/"+ shotvaltocard, params);
+
 }
 function Addlabeltocard(tipo,idcard,key,token){
   if (tipo==1){
