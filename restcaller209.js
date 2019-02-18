@@ -26,7 +26,7 @@
     data1.token = token;
     data1.name = document.title;
     var auxtitle=document.title;
-    if document.title.indexOf(auxtitle) !== -1{
+    if (document.title.indexOf(auxtitle) !== -1){
         alert("No se puede crear un card si no se trata de una Control Table")
     }
     }
