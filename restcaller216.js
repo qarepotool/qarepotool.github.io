@@ -245,7 +245,7 @@ function test(event){
   arr[1][1] =estimacion;
   for (var j = 0; j < 2; j++) {
     var xhrd = new XMLHttpRequest();
-    xhrd.open("PUT", "https://api.trello.com/1/card/" + cardcreated + "/customField/" + arr[0][j] + "/item?token=" + token + "&key=" + key);
+    xhrd.open("PUT", "https://api.trello.com/1/card/" + cardcreated + "/customField/" + arr[0][j] + "/item?token=" + token + "&key=" + key,false);
     xhrd.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     if (arr[1][j]== null){
       arr[1][j]=" ";
