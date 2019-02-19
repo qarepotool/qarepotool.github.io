@@ -260,7 +260,7 @@ function test(event){
     xhrd.send(json4);  
     }
 }
-    window.close();
+    //window.close();
     OpenCard(shotvaltocard,key,token);
 function OpenCard(shotvaltocard,key,token) {
   var e;
